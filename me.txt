@@ -1,0 +1,19 @@
+c
+c     comment lines start with c or C in column 1
+c
+ 12 -12 12.12 -15.3 152.23e02 -152.23e02 152.54e-01
+ stop
+ simple_label "simple string"
+ this.is.a.name
+ list 1-8 by 2 9 to 100 by 20
+ output to zz_out
+  12 -12 12.12 -15.3 152.23e02 -152.23e02 152.54e-01
+ simple_label "simple string"
+ this.is.a.name
+ stop
+ list 1-8 by 2 9 to 100 by 20
+ output to remote
+ input from remote
+c
+c   all done
+c

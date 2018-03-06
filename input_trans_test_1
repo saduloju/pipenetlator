@@ -1,0 +1,238 @@
+c
+c   lots of input errors to be found but nothing that
+c   should cause program to quit until the stop command
+c
+c   last updated: March 2, 2018 rhd
+c
+c
+number of pipe 24 node 15
+project 'Small test network'
+number of pipes 3 nodes 3
+reservoir at node 5
+reservoir node 3 head -10
+reservoir node 1 head 100
+pipe properties
+ diameter 10 hazen_williams coefficient 120 length 1000
+    1 1 5
+    1 1 2
+ diameter -12 diameter 12
+    2 2 3
+ diameter 10 length 1500
+    3 1 3
+ lngth 1500
+  3 1 3
+pipe properties
+  length 1200
+    3 1 3
+c
+external nodal flows
+ 2 1.5
+ 3 3.0
+initial nodal heads
+ 2 95
+ 3 85
+ 2 -20
+ 2 95
+convergence tolerance 0.0
+convergence tolerance 0.01
+maximum newton iterations 0
+output data
+solve       
+output results
+c
+c
+project 'Glenwood Estates Subdivision - Extension B-2011'
+number of pipes 9 nodes 7
+reservoir at node 1 head 200
+pipe properties
+ diameter 8.0 hazen_williams coefficient 120 length 2000
+    2 start 2 end 5
+    3 start 5 end 6
+ length 1500
+    4 start 2 end 3 
+    5 start 5 end 4 
+ length 2000
+    8 start 3 end 4
+ diameter 10.0 length 1000
+    1  1  2 
+ length 2000
+    9  4  7 
+ length 3000 diameter 6
+    6  5  7 
+ length 1500
+    7  6  7
+external nodal flows
+ 5 0.5
+ 6 1.0
+ 3 -1.0
+ 4 1.5
+ 7 1.5
+initial nodal heads
+ 2 190
+ 3 180
+ 4 160
+ 5 170
+ 6 160
+ 7 150
+convergence tolerance 0.01
+maximum newton iterations 20
+output data results    
+solve
+output results
+solve
+output results
+c
+c
+c
+project 'Test of a Larger Network'
+ number of pipes 38 nodes 24
+ reservoir at node 1 head 400
+ pipe properties
+  diameter 8.0 hazen_williams coefficient 120 length 1000
+   1 1 2
+   2 2 3
+   3 3 4
+   4 4 5
+   5 5 6
+   6 7 8
+   7 8 9
+   8 9 10
+   9 10 11
+  10 11 12
+  11 13 14
+  12 14 15
+  13 15 16
+  14 16 17
+  15 17 18
+  16 19 20
+  17 20 21
+  18 21 22
+  19 22 23
+  20 23 24
+  21 7 1
+  22 13 7
+  23 19 13
+  24 8 2
+  25 14 8
+  26 20 14
+  27 9 3
+  28 15 9
+  29 21 15
+  30 10 4
+  31 16 10
+  32 22 16
+  33 11 5
+  34 17 11
+  35 23 17
+  36 12 6
+  37 18 12
+  38 24 18
+external nodal flows
+ 8 3
+ 15 1
+ 16 1
+ 23 2
+ 24 2
+ 19 2
+ 6 2
+ initial nodal heads
+  2 190
+  3 180
+  4 160
+  5 170
+  6 160
+  7 150
+  8 140
+  9 130
+ 10 120
+ 11 110
+ 12 100
+ 13 90
+ 14 80
+ 15 75
+ 16 70
+ 17 65
+ 18 60
+ 19 55
+ 20 50 
+ 21 45
+ 22 40
+ 23 35
+ 24 30
+convergence tolerance 0.01
+maximum newton iterations 40
+solve
+output data results    
+c
+c
+project 'bad network data'
+number of pipes 3 nodes 3
+reservoir at node 1 head 100
+pipe properties
+ diameter 10 hazen_williams coefficient 120 
+    1 1 2
+ diameter 12 length 1000
+    2 2 3
+ diameter 10 length 1500
+    3 1 3
+external nodal flows
+ 2 1.5
+ 3 3.0
+initial nodal heads
+ 2 95
+ 3 85
+convergence tolerance 0.01
+maximum newton iterations 20
+output data
+solve       
+output results
+c
+c
+ project 'xxxx'
+ number of nodes 20 pipes 30
+convergence 3.1
+maximum newton iterations 20
+initial heads
+ 1 4.1
+ 10 2.0
+  12 -32
+c
+reservoir node 12 head 20
+c
+external nodal flows
+  1 -3.2
+  30 4.2
+   20 1.3
+c
+debug off
+c
+pipe properties
+  diameter 10 length 20 hazen 101.5
+   1  start 10 end 15
+   3 2 5
+c
+output data results xx
+solve
+c
+c
+project
+reservoir at node 5
+number of pipes 5 nodes 10
+reservoir at node 5
+pipe properties
+  2 start 2 end 5
+ diameter -8 hazen_williams coefficient 120
+ diameter 6  hazen_williams coefficient 120
+  2 start 2 end 5 
+  3 start 5 end 6 
+xxxx
+pipe properties 
+  3000 2 10
+output data
+initial nodal heads
+ 2000 190
+ 3 180
+external nodal flows
+  4 100
+output data
+stop
