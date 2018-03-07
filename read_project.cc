@@ -3,9 +3,10 @@
 #include "system.h"
 #include "prototypes.h"
 
-void read_project()
+void read_project(bool &debug)
 {
-user_trace( 1, "read_project");
+if (debug ==true){user_trace( 1, "read_project");}
+
  string title;
  int nchar_in_string;
  title.reserve(80);
@@ -18,6 +19,6 @@ user_trace( 1, "read_project");
    }
 //return;
 // }
-user_trace( 2, "read_project");
+if (debug ==true){user_trace( 2, "read_project");}
 return;	 
 }

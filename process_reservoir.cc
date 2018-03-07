@@ -2,24 +2,26 @@
 #include "system.h"
 #include "prototypes.h"
 
-
-void process_reservoir()
+void process_reservoir(bool &debug)
 {
-user_trace( 1, "process_reservoir");
-typedef double Real;
+if (debug ==true){user_trace( 1, "process_reservoir");}	
+
 int node_num; 
-double head_value;	
+Real head_value;	
 while( ! endcrd ())
  {
    matchs( "at", 2 );
    if( matchs( "node", 4))
 	 {
-	  if( ! integr(node_num)){ error_message(4); continue;}
+	  if( ! integr(node_num)){ error_message(7); continue;}
 	 }
    else if( matchs( "head", 4))
      {
-	  if( ! numd(head_value)){ error_message(5); continue;}	
-     cout <<" checking double head value"	<<head_value << endl;
+	  if( ! numd(head_value)){ error_message(30); continue;}	
+
+   if(debug ==true)
+     {
+	  cout <<" checking head value"	<<head_value << endl;}
      }
    else 
      {
@@ -28,7 +30,9 @@ while( ! endcrd ())
 	   continue;
 	 }
 	 
- }	
-user_trace( 2, "process_reservoir"); 
+ }
+ 
+if (debug ==true){user_trace( 2, "process_reservoir");}	
+
 return;
 }

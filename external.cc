@@ -2,10 +2,12 @@
 #include "system.h"
 #include "prototypes.h"
 
-void process_external( vector<double> &flow_vector, int &num_nodes)
+void process_external( vector<Real> &external_flows, int &num_nodes,
+                       bool &debug)
 {
-user_trace( 1, "process_external");
-typedef double Real;
+
+if (debug ==true){user_trace( 1, "process_external");} 
+
 int node_number;
 int i;
 matchs( "nodal", 4);
@@ -21,21 +23,20 @@ do{
      }
    else break;
    
-  flow_vector(node_number)=flow_number;
+  external_flows(node_number)=flow_number;
 
   } while (true);
 
 
-  
-///use debug here  
-  cout<< "flow_vector\n";
-  for( i=1; i<=num_nodes; i++){cout <<flow_vector(i)<< endl;}
-///
+  if(debug ==true)
+    {	  
+     cout<< "flow_vector\n";
+     for( i=1; i<=num_nodes; i++){cout <<external_flows(i)<< endl;}
+    
+	 user_trace( 2, "process_external");
+	} 
 
-
-
-user_trace( 2, "process_external");
-	
+return;	
 }
 
 
@@ -47,10 +48,11 @@ user_trace( 2, "process_external");
 /////////////////////////////////////////////
 ///////////////////////////////////////////
 
-void process_initial()
+void process_initial( bool &debug)
 {
-user_trace( 1, "process_initial");
-typedef double Real;
+	
+if (debug ==true){user_trace( 1, "process_initial");} 	
+	
 int node_number;
 matchs( "nodal", 4);
 matchs( "heads", 4);
@@ -69,9 +71,9 @@ readsc();
 		
   } while (true);
 
+if (debug ==true){user_trace( 2, "process_initial");} 	
 
-user_trace( 2, "process_initial");
-	
+return;
 }
 
 
