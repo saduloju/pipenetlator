@@ -1,0 +1,620 @@
+      project 'Glenwood Estates Subdivision -Extension B-2018'
+      number of pipes 9 nodes 7
+      reservoir at node 10 head 200
+... Trace. Entering: process_reservoir
+ checking Real head value200
+...Trace. Leaving: process_reservoir
+      magnet 100 goat 67
+ >>> ERROR: wrong command 2{ magnet}....skip....
+ >>> ERROR: wrong command 2{ 100}....skip....
+ >>> ERROR: wrong command 2{ goat}....skip....
+ >>> ERROR: wrong command 2{ 67}....skip....
+      pipe properties
+... Trace. Entering: process_propties
+... Trace. Entering: process_parameters
+      diameter 8.0  hazen_williams coefficient 120 length 2000 
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      2 start 2 end 5
+... Trace. Entering: process_node
+pipe_number: 2
+node_idS: 2
+node_idE: 5
+110
+120
+212
+225
+310
+320
+410
+420
+510
+520
+610
+620
+710
+720
+810
+820
+910
+920
+length_vector
+0
+2000
+0
+0
+0
+0
+0
+0
+0
+diam_vector
+0
+8
+0
+0
+0
+0
+0
+0
+0
+hz_coeff_vector
+0
+120
+0
+0
+0
+0
+0
+0
+0
+...Trace. Leaving: process_node
+      3 start 5 end 6
+... Trace. Entering: process_node
+pipe_number: 3
+node_idS: 5
+node_idE: 6
+110
+120
+212
+225
+315
+326
+410
+420
+510
+520
+610
+620
+710
+720
+810
+820
+910
+920
+length_vector
+0
+2000
+2000
+0
+0
+0
+0
+0
+0
+diam_vector
+0
+8
+8
+0
+0
+0
+0
+0
+0
+hz_coeff_vector
+0
+120
+120
+0
+0
+0
+0
+0
+0
+...Trace. Leaving: process_node
+      8 start 3 end 4
+... Trace. Entering: process_node
+pipe_number: 8
+node_idS: 3
+node_idE: 4
+110
+120
+212
+225
+315
+326
+410
+420
+510
+520
+610
+620
+710
+720
+813
+824
+910
+920
+length_vector
+0
+2000
+2000
+0
+0
+0
+0
+2000
+0
+diam_vector
+0
+8
+8
+0
+0
+0
+0
+8
+0
+hz_coeff_vector
+0
+120
+120
+0
+0
+0
+0
+120
+0
+...Trace. Leaving: process_node
+      length 1500
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      4 2 3
+... Trace. Entering: process_node
+pipe_number: 4
+node_idS: 2
+node_idE: 3
+110
+120
+212
+225
+315
+326
+412
+423
+510
+520
+610
+620
+710
+720
+813
+824
+910
+920
+length_vector
+0
+2000
+2000
+1500
+0
+0
+0
+2000
+0
+diam_vector
+0
+8
+8
+8
+0
+0
+0
+8
+0
+hz_coeff_vector
+0
+120
+120
+120
+0
+0
+0
+120
+0
+...Trace. Leaving: process_node
+      5 5 4
+... Trace. Entering: process_node
+pipe_number: 5
+node_idS: 5
+node_idE: 4
+110
+120
+212
+225
+315
+326
+412
+423
+515
+524
+610
+620
+710
+720
+813
+824
+910
+920
+length_vector
+0
+2000
+2000
+1500
+1500
+0
+0
+2000
+0
+diam_vector
+0
+8
+8
+8
+8
+0
+0
+8
+0
+hz_coeff_vector
+0
+120
+120
+120
+120
+0
+0
+120
+0
+...Trace. Leaving: process_node
+      diameter 10.0 length 1000
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      1 1 2
+... Trace. Entering: process_node
+pipe_number: 1
+node_idS: 1
+node_idE: 2
+111
+122
+212
+225
+315
+326
+412
+423
+515
+524
+610
+620
+710
+720
+813
+824
+910
+920
+length_vector
+1000
+2000
+2000
+1500
+1500
+0
+0
+2000
+0
+diam_vector
+10
+8
+8
+8
+8
+0
+0
+8
+0
+hz_coeff_vector
+120
+120
+120
+120
+120
+0
+0
+120
+0
+...Trace. Leaving: process_node
+      length 2000
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      9 4 7
+... Trace. Entering: process_node
+pipe_number: 9
+node_idS: 4
+node_idE: 7
+111
+122
+212
+225
+315
+326
+412
+423
+515
+524
+610
+620
+710
+720
+813
+824
+914
+927
+length_vector
+1000
+2000
+2000
+1500
+1500
+0
+0
+2000
+2000
+diam_vector
+10
+8
+8
+8
+8
+0
+0
+8
+10
+hz_coeff_vector
+120
+120
+120
+120
+120
+0
+0
+120
+120
+...Trace. Leaving: process_node
+      length 3000 diameter 6
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      6 5 7
+... Trace. Entering: process_node
+pipe_number: 6
+node_idS: 5
+node_idE: 7
+111
+122
+212
+225
+315
+326
+412
+423
+515
+524
+615
+627
+710
+720
+813
+824
+914
+927
+length_vector
+1000
+2000
+2000
+1500
+1500
+3000
+0
+2000
+2000
+diam_vector
+10
+8
+8
+8
+8
+6
+0
+8
+10
+hz_coeff_vector
+120
+120
+120
+120
+120
+120
+0
+120
+120
+...Trace. Leaving: process_node
+      length 1500
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      7 6 7
+... Trace. Entering: process_node
+pipe_number: 7
+node_idS: 6
+node_idE: 7
+111
+122
+212
+225
+315
+326
+412
+423
+515
+524
+615
+627
+716
+727
+813
+824
+914
+927
+length_vector
+1000
+2000
+2000
+1500
+1500
+3000
+1500
+2000
+2000
+diam_vector
+10
+8
+8
+8
+8
+6
+6
+8
+10
+hz_coeff_vector
+120
+120
+120
+120
+120
+120
+120
+120
+120
+...Trace. Leaving: process_node
+      length 1500
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_Len_diam_hw
+...Trace. Leaving: process_Len_diam_hw
+      7 6 7
+... Trace. Entering: process_node
+pipe_number: 7
+node_idS: 6
+node_idE: 7
+111
+122
+212
+225
+315
+326
+412
+423
+515
+524
+615
+627
+716
+727
+813
+824
+914
+927
+length_vector
+1000
+2000
+2000
+1500
+1500
+3000
+1500
+2000
+2000
+diam_vector
+10
+8
+8
+8
+8
+6
+6
+8
+10
+hz_coeff_vector
+120
+120
+120
+120
+120
+120
+120
+120
+120
+...Trace. Leaving: process_node
+      external flows
+... Trace. Entering: check_Len_diam_hw
+... Trace. Entering: process_parameters
+...Trace. Leaving: process_propties
+... Trace. Entering: process_external
+      5 0.5
+      6 1.0
+      3 -1.0
+      4 1.5
+      7 1.5
+      initial nodal heads
+flow_vector
+0
+0
+-1
+1.5
+0.5
+1
+1.5
+...Trace. Leaving: process_external
+... Trace. Entering: process_initial
+      2 190
+      3 180
+      4 160
+      5 170
+      6 160
+      7 150
+      convergence tolerance 0.01
+...Trace. Leaving: process_initial
+      maximum newton iterations 20
+      output data
+I will need to implement this now!
+      solve
+COMMAND NOT YET IMPLEMENTED FOR SOLVE
+      output results
+COMMAND NOT YET IMPLEMENTED FOR OUTPUT RESULTS
+      stop
+ Program Terminated by user 1

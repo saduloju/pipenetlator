@@ -1,33 +1,46 @@
 #include "system.h"
 #include "prototypes.h"
-
-void process_parameters(array <int> &node, vector <double> &length_vector,  vector <double> &diam_vector, vector <double> &hz_coeff_vector, int &num_pipes, int &num_nodes)
+ 
+void process_parameters(array <int> &node_table, vector <Real> &lengths,
+                        vector <Real> &diameters, vector <Real> &hw_coeffs,
+						int &num_pipes, int &num_nodes, bool &debug)
 {
-user_trace( 1, "process_parameters");
-typedef double Real;
+
+if (debug ==true){user_trace( 1, "process_parameters");}	
+
+
 Real length_value, diam_value, hz_w_value;
 int pipe_number,LDH;
 bool check;
 
-do{
-	
-readsc();
-   if(  integr( pipe_number))
-   //if (pipe_number > num_pipes){error_message(17); continue;}	   //return;
-     {
-	   process_node(node, length_vector, diam_vector, hz_coeff_vector, pipe_number, length_value, diam_value, hz_w_value, num_pipes, num_nodes);
-	   continue;
+ do{
+    readsc();
+
+    if(  integr(pipe_number))
+	  { //error_message(15); continue;}
+        if (pipe_number < 0){error_message(38); continue;}
+		if (pipe_number > num_pipes){error_message(16); continue;}//}
+	   //return;
+      else
+	    {
+	      process_node(node_table, lengths, diameters,
+               	   hw_coeffs, pipe_number, length_value, 
+				   diam_value, hz_w_value, num_pipes, num_nodes, debug);
+	     continue;
+	    }
      }
-	 check= check_Len_diam_hw(LDH );
+   check= check_Len_diam_hw(LDH, debug);
    if (check == true)
 	 {
-		process_Len_diam_hw(length_value, diam_value, hz_w_value, LDH);
+		process_Len_diam_hw(length_value, diam_value, hz_w_value, num_nodes, LDH, debug);
 		continue;
 	 }
-	 else break;
+	 else { error_message(43); break;}
 		
 } while (true);
-user_trace( 1, "process_parameters");
+
+if (debug ==true){user_trace( 2, "process_parameters");}
+
 }
 
 
@@ -36,15 +49,17 @@ user_trace( 1, "process_parameters");
 /////////////////////////////////////////////////////
 #include "prototypes.h"
 
-
-bool check_Len_diam_hw(int &LDH )
+bool check_Len_diam_hw(int &LDH, bool &debug)
  {
-user_trace( 1, "check_Len_diam_hw");
-	   if ( matchs( "length", 3)){ LDH=1; return( true );}
-	   if ( matchs( "diameter", 4)){ LDH=2; return( true );}
-       else if ( matchs( "hazen_williams", 4)){LDH=3; return( true );}
-	   else return( false );
-user_trace( 2, "check_Len_diam_hw");
+  if (debug ==true){user_trace( 1, "check_Len_diam_hw");}	
+
+  if ( matchs( "length", 3)){ LDH=1; return( true );}
+  if ( matchs( "diameter", 4)){ LDH=2; return( true );}
+  else if ( matchs( "hazen_williams", 4)){LDH=3; return( true );}
+  else return( false );
+ 
+  if (debug ==true){user_trace( 2, "check_Len_diam_hw");} 
+
  }
  
 
@@ -56,49 +71,61 @@ user_trace( 2, "check_Len_diam_hw");
 
 #include "prototypes.h"
 	 
-void process_Len_diam_hw(double &length_value, double &diam_value, double &hz_w_value, int &LDH)
+void process_Len_diam_hw(Real &length_value, Real &diam_value, 
+                         Real &hz_w_value,int &num_nodes, int &LDH, bool &debug)
 {
-user_trace( 1, "process_Len_diam_hw");
+  if (debug ==true){user_trace( 1, "process_Len_diam_hw");} 
 
   if ( LDH==1)
      {
 	if( ! numd(length_value)) {error_message(8);}
-    // process_parameters(inten);
+	if(num_nodes < 0) { error_message(38);}
+	if(length_value < 0) {error_message(24);}
+	if(length_value < 0.2) {error_message(27);}
      }
   if ( LDH==2)
      {
 	if( ! numd(diam_value)) {error_message(9);}
-    // process_parameters(inten);
-     }
+	if(diam_value < 0) {error_message(25);}
+    if(diam_value < 0.5) {error_message(28);}
+	}
   else if ( LDH==3)
     {
     matchs( "coeffients", 4);
     if( ! numd(hz_w_value)) {error_message(10);}
-    // process_parameters(inten);
+	if(hz_w_value < 0) {error_message(26);}
+    if(hz_w_value < 0.005) {error_message(29);}
     } 
 
 	
-while ( ! endcrd() )
- {
-  if ( matchs( "length", 3))
+  while ( ! endcrd() )
+  {
+   if ( matchs( "length", 3))
      {
-	if( ! numd(length_value)) {error_message(8); continue;}
-    // process_parameters(inten);
+	  if( ! numd(length_value)) {error_message(8); continue;}
+	  if(num_nodes < 0) { error_message(38); return;}
+	  if(length_value < 0) {error_message(24);}
+	  if(length_value < 0.2) {error_message(27);}
      }
-  if ( matchs( "diameter", 4))
+   if ( matchs( "diameter", 4))
      {
-	if( ! numd(diam_value)) {error_message(9); continue;}
-    // process_parameters(inten);
+	  if( ! numd(diam_value)) {error_message(9); continue;}
+	  if(diam_value < 0) {error_message(25);}
+      if(diam_value < 0.5) {error_message(28);}
      }
   else if ( matchs( "hazen_williams", 4))
     {
-    matchs( "coeffients", 4);
-    if( ! numd(hz_w_value)) {error_message(10); continue;}
-    // process_parameters(inten);
+     matchs( "coeffients", 4);
+     if( ! numd(hz_w_value)) {error_message(10); continue;}
+	 if(hz_w_value < 0) {error_message(26);}
+     if(hz_w_value < 0.005) {error_message(29);}
     } 
   else break;  
  }
- user_trace( 2, "process_Len_diam_hw");
+ 
+if (debug ==true){user_trace( 1, "process_Len_diam_hw");} 
+
+return;
 } 
  
  
@@ -119,60 +146,68 @@ else
 //////////////
 ////function : process node 
 
-void process_node(array <int> &node, vector<double> &length_vector, vector<double> &diam_vector, vector<double> &hz_coeff_vector, int &pipe_number,
-                   double &length_value,  double &diam_value,  double &hz_w_value, int num_pipes, int num_nodes)
+void process_node(array <int> &node_table, vector<Real> &lengths, 
+                 vector<Real> &diameters, vector<Real> &hw_coeffs,
+				 int &pipe_number,Real &length_value, Real &diam_value,
+				 Real &hz_w_value, int &num_pipes, int &num_nodes, bool &debug)
 {
-user_trace( 1, "process_node");
 
-int node_idS, node_idE;// pipe_number;
+if (debug ==true){user_trace( 1, "process_node");} 
+int node_idS, node_idE;
 int i,j;
 
 while ( ! endcrd() )
-{
-  matchs( "start", 4);
-  if( ! integr(node_idS)) { error_message(11);continue;}
-  if (node_idS > num_nodes){error_message(18); continue;}
- //      node(pipe_number,1)= node_idS;
-  matchs( "end", 3);
-  if( ! integr(node_idE)) { error_message(12);continue;}
-  if (node_idE > num_nodes){error_message(18); continue;}
+ {
+   matchs( "start", 4);
+   if( ! integr(node_idS)) { error_message(11);continue;}
+   if (num_nodes < 0){error_message(37); return;}
+   if (node_idS > num_nodes){error_message(18); return;}
 
-  
-  
-  
-  ///////DEBUG THIS !!
-	 cout << "pipe_number: "<< pipe_number<< endl<< flush;
-	 cout << "node_idS: "<< node_idS<< endl << flush;
-	 cout << "node_idE: "<< node_idE<< endl << flush;
-	
+   matchs( "end", 3);
+   if( ! integr(node_idE)) { error_message(12);continue;}
+   if (num_nodes < 0){error_message(37); continue;}
+   if (node_idE > num_nodes){error_message(19); continue;}
 
-	
-node(pipe_number,1)= node_idS;
-node(pipe_number,2)= node_idE;
+   
+   if(debug ==true)
+     { 
+	  cout << "pipe_number: "<< pipe_number<< endl<< flush;
+	  cout << "node_idS: "<< node_idS<< endl << flush;
+	  cout << "node_idE: "<< node_idE<< endl << flush;
+     }
 
-length_vector(pipe_number) = length_value;
-diam_vector(pipe_number) = diam_value;
-hz_coeff_vector(pipe_number) = hz_w_value;
+   node_table(pipe_number,1)= node_idS;
+   node_table(pipe_number,2)= node_idE;
 
+   lengths(pipe_number) = length_value;
+   diameters(pipe_number) = diam_value;
+   hw_coeffs(pipe_number) = hz_w_value;
 
+   if(debug ==true)
+    { 
+      for( i=1; i<=num_pipes; i++)
+	     {for(j=1; j<=2 ; j++)
+		     {cout <<i<<j<< node_table(i,j)<< endl;}
+         }
+	}
 
-  for( i=1; i<=num_pipes; i++)
-	 {for(j=1; j<=2 ; j++)
-		 {cout <<i<<j<< node(i,j)<< endl;}
-	 }
-	 
-  cout<< "length_vector\n";
-  for( i=1; i<=num_pipes; i++){cout <<length_vector(i)<< endl;}
-  cout<< "diam_vector\n";
-  for( i=1; i<=num_pipes; i++){cout <<diam_vector(i)<< endl;}
-  cout<< "hz_coeff_vector\n";
-  for( i=1; i<=num_pipes; i++){cout <<hz_coeff_vector(i)<< endl;}
+  if(debug ==true)  
+    {
+	  cout<< "lengths\n";
+      for( i=1; i<=num_pipes; i++){cout <<lengths(i)<< endl;}
+      cout<< "diameters\n";
+      for( i=1; i<=num_pipes; i++){cout <<diameters(i)<< endl;}
+      cout<< "hw_coeffs\n";
+      for( i=1; i<=num_pipes; i++){cout <<hw_coeffs(i)<< endl;}
+    }
 //	else 
 //	 { error_message(12);
 //	   continue;
 //	 }
 }
-user_trace( 2, "process_node");
+
+  if (debug ==true){user_trace( 2, "process_node");} 
+  
  } 
 //}
 //}

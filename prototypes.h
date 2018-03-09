@@ -1,30 +1,55 @@
 //
 // function prototypes
 //void get_input_file_and_open(void);
-//void get_values_from_file( string &, vector <double> &, int &);
-//void compute_statistics( vector<double> &, int, double &, double &);
-//void output_results( string,vector<double>&, int, double, double );
+//void get_values_from_file( string &, vector <Real> &, int &);
+//void compute_statistics( vector<Real> &, int, Real &, Real &);
+//void output_results( string,vector<Real>&, int, Real, Real );
+typedef double Real;
+
 void error_message(int);
-void process_nodal_data(array<double> &);
-void process_nodal_loads(array<double> &);
-void read_project();
-void process_number(array <int> &node, vector<double> &length_vector,
-                    vector<double> &diam_vector, vector<double> &hz_coeff_vector,
-					vector<double> &flow_vector, vector<double> &ihead_vector, int &num_pipes, int &num_nodes);
-void process_reservoir();
-void process_propties(array <int> &node, vector<double> &length_vector, vector<double> &diam_vector, vector<double> &hz_coeff_vector, int &num_pipes, int &num_nodes);
-void process_parameters(array <int> &node, vector <double> &length_vector,  vector <double> &diam_vector, vector <double> &hz_coeff_vector, int &num_pipes, int &num_nodes);
-bool check_Len_diam_hw(int & );
-void process_Len_diam_hw(double &length_value, double &diam_value, double &hz_w_value, int &LDH);
-void process_node(array <int> &node, vector<double> &length_vector, vector<double> &diam_vector, vector<double> &hz_coeff_vector, int &pipe_number,
-                   double &length_value,  double &diam_value,  double &hz_w_value, int num_pipes, int num_nodes);
+void read_project(array <int> &node_table, vector<Real> &lengths, 
+                  vector<Real> &diameters, vector<Real> &hw_coeffs, 
+				  vector<Real> &external_flows, vector<Real> &initial_heads,
+				  int &counte, string &title, bool &debug);
+void process_number(array <int> &node_table, vector<Real> &lengths,
+                    vector<Real> &diameters, vector<Real> &hw_coeffs,
+					vector<Real> &external_flows, vector<Real> &initial_heads, 
+					const int max_pipes, const int max_nodes,
+					int &num_pipes, int &num_nodes, bool &debug);
+void process_reservoir(int &reservoir_node, Real &reservoir_head, bool &debug);
+void process_propties(array <int> &node_table, vector<Real> &lengths, 
+                      vector<Real> &diameters, vector<Real> &hw_coeffs,
+					  int &num_pipes, int &num_nodes, bool &debug);
+void process_parameters(array <int> &node_table, vector <Real> &lengths,
+                        vector <Real> &diameters, vector <Real> &hw_coeffs,
+						int &num_pipes, int &num_nodes, bool &debug);
+bool check_Len_diam_hw(int &LDH, bool &debug);
+void process_Len_diam_hw(Real &length_value, Real &diam_value, 
+                         Real &hz_w_value,int &num_nodes, int &LDH, bool &debug);
+void process_node(array <int> &node_table, vector<Real> &lengths, 
+                 vector<Real> &diameters, vector<Real> &hw_coeffs,
+				 int &pipe_number,Real &length_value, Real &diam_value,
+				 Real &hz_w_value, int &num_pipes, int &num_nodes, bool &debug);
 void user_trace( int, string );
-void process_external( vector<double> &flow_vector, int &num_nodes);
-void process_initial();
-void process_convergence();
-void process_iterations();
-void process_solve();
-void process_output();
-void process_output_data();
-void process_output_results();
+void process_external( vector<Real> &external_flows, int &num_nodes,
+                       bool &debug);
+void process_initial(vector<Real> &initial_heads, int &num_nodes,
+                     bool &debug);
+void process_convergence( Real &tol, const Real min_tol, const Real max_tol, bool &debug);
+void process_iterations(bool &debug);
+void process_solve(bool &debug);
+void process_output(array <int> &node_table, vector<Real> &lengths,
+                    vector<Real> &diameters, vector<Real> &hw_coeffs,
+					vector<Real> &external_flows, vector<Real> &initial_heads, 
+					const int max_pipes, const int max_nodes,
+					int &num_pipes, int &num_nodes,int reservoir_node, int reservoir_head,
+					Real &tol,string &title, bool &debug);
+void process_output_data(array <int> &node_table, vector<Real> &lengths,
+                    vector<Real> &diameters, vector<Real> &hw_coeffs,
+					vector<Real> &external_flows, vector<Real> &initial_heads, 
+					const int max_pipes, const int max_nodes,
+					int &num_pipes, int &num_nodes,int reservoir_node, int reservoir_head,
+					Real &tol,string &title, bool &debug);
+void process_output_results(bool &debug);
+void process_debug( bool &debug);
 //

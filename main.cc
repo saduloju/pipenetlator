@@ -1,118 +1,127 @@
 #include "system.h"
 #include "prototypes.h"
 
-//ifstream data_file;
+
+
+
 
 int main()
 {
- user_trace( 1, "main");
- //int i,values[10];
- //int *v_ptr;
+
+const int max_nodes = 2000, max_pipes = 4000; 
+const Real max_tol=10, min_tol=0.0001;
+const int max_iter=30, min_iter=2; 
+int num_pipes, num_nodes, reservoir_node; 
+Real reservoir_head, tol; 
+int i, j, counte=0;
+int new_read;
+bool debug = false;
+array <int> node_table;
+vector<Real> lengths;
+vector<Real> diameters;
+vector<Real> external_flows;
+vector<Real> initial_heads;
+vector<Real> hw_coeffs;
+string title;
  
-/* v_ptr = values;
- v_ptr = &values[0];*/
- 
-//string num_values;
-array <double>inten;////////////////////////////////////////////////////////////////////////////////
-array <int> node;
-vector<double> length_vector;
-vector<double> diam_vector;
-vector<double> flow_vector;
-vector<double> ihead_vector;
-vector<double> hz_coeff_vector;
-inten.create(1,100,1, 100); /////////////////////////////////////////////////////////////////
-int num_pipes, num_nodes; 
-int i, j;
- int new_read;
- init_scan ();
- new_read = true;
- do
+init_scan ();
+
+new_read = true;
+do
  {	 
    if( new_read ) readsc ();
    if ( matchs( "Project" , 3))
       {
-		 read_project();
-	   continue;
+		counte =++counte;
+		
+		read_project(node_table, lengths, diameters, 
+		             hw_coeffs, external_flows, initial_heads, 
+					 counte, title, debug);
+	    continue;
 	  }
    if ( matchs( "number" ,3))
       {
-		process_number( node, length_vector, diam_vector, hz_coeff_vector, flow_vector, ihead_vector, num_pipes, num_nodes);
+		process_number( node_table, lengths, diameters, 
+		               hw_coeffs, external_flows, 
+					   initial_heads, max_pipes, max_nodes,
+					   num_pipes, num_nodes, debug);
         continue;		
 	  }
    if ( matchs( "reservoir" ,5))
       {
-		process_reservoir();
+		process_reservoir(reservoir_node, reservoir_head, debug);
         continue;		
 	  }
    if ( matchs( "pipe" , 4))
       {
-	   process_propties(node, length_vector, diam_vector, hz_coeff_vector, num_pipes, num_nodes);
+	   process_propties(node_table, lengths, diameters, 
+	                     hw_coeffs, num_pipes, 
+						 num_nodes, debug);
 	   new_read = false;
 	   continue;
 	  }	 
    if ( matchs( "external" , 4))
       {
-	   process_external( flow_vector, num_nodes);
+	   process_external( external_flows, num_nodes, debug);
 	   new_read = false;
 	   continue;
 	  }
    if ( matchs( "initial" , 4))
       {
-	   process_initial();
+	   process_initial(initial_heads, num_nodes, debug);
 	   new_read = false;
 	   continue;
 	  }
    if ( matchs( "convergence", 4))
       {
-	   process_convergence();
-	   new_read = false;
+	   process_convergence(tol, min_tol, max_tol, debug);
+	   new_read = true;
 	   continue;
 	  }
    if ( matchs( "maximum", 4))
       {
-	   process_iterations();
-	   new_read = false;
+	   process_iterations(debug);
+	   new_read = true;
 	   continue;
 	  }
    if ( matchs( "solve", 4))
       {
-	   process_solve();
-	   new_read = false;
+	   process_solve(debug);
+	   new_read = true;
 	   continue;
 	  }
    if ( matchs( "output", 4))
       {
-	   process_output();
-	   new_read = false;
+	   process_output(node_table, lengths, diameters, hw_coeffs,
+					external_flows, initial_heads, max_pipes, max_nodes,
+					num_pipes, num_nodes, reservoir_node, reservoir_head,
+					tol, title, debug);
+	   new_read = true;
 	   continue;
 	  }
-   if ( matchs( "nodal" , 3))
+   if ( matchs( "debug" , 5))
       {
-	   process_nodal_data(inten);
-	   new_read = false;
+	   process_debug(debug);
+	   new_read = true;
 	   continue;
 	  }
-   if( matchs( " element", 4))
-     {	  cout << "not processed now" << endl;
-	 }
    else if ( matchs ( "stop", 4 ))
-   {
-    error_message (1);
-	exit(0);
-   }
-   else
-   {
-     while (! endcrd ())
       {
+        error_message (1);
+	    exit(0);
+      }
+   else
+     {
+       while (! endcrd ())
+       {
 	    error_message(2);
         istrue();
         continue;	
-      }
+       }
      new_read = true;
-   }
+     }
  } while (true);
- {cout <<"work on this/n";}
- user_trace( 2, "main");
+ 
  return(0);
  }
  

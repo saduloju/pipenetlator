@@ -2,8 +2,9 @@ project 'Glenwood Estates Subdivision -Extension B-2018'
 number of pipes 9 nodes 7
 reservoir at node 10 head 200
 magnet 100 goat 67
+c debug on
 pipe properties
-diameter 8.0  hazen_williams coefficient 120 length 2000 
+diameter 8.0  hazen_williams coefficient 120 length -2000 
 2 start 2 end 5
 3 start 5 end 6
 8 start 3 end 4
@@ -16,8 +17,6 @@ length 2000
 9 4 7
 length 3000 diameter 6
 6 5 7
-length 1500
-7 6 7
 length 1500
 7 6 7
 external flows
