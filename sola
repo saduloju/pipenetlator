@@ -1,659 +1,39 @@
       project 'Glenwood Estates Subdivision -Extension B-2018'
-... Trace. Entering: read_project
-...Trace. Leaving: read_project
-      number of pipes -9 nodes 7
-... Trace. Entering: process_number
->>>CAUTION: num. of pipes { -9} is negative,...using default...
-...Trace. Leaving: process_number
+      number of pipes 9 nodes 7
       reservoir at node 10 head 200
-... Trace. Entering: process_reservoir
- checking Real head value200
-...Trace. Leaving: process_reservoir
       magnet 100 goat 67
  >>> ERROR: wrong command 2{ magnet}....skip....
+ >>> ERROR: wrong command 2{ 100}....skip....
+ >>> ERROR: wrong command 2{ goat}....skip....
+ >>> ERROR: wrong command 2{ 67}....skip....
       c debug on
       pipe properties
-... Trace. Entering: process_propties
-... Trace. Entering: process_parameters
-      diameter 8.0  hazen_williams coefficient 120 length 2000 
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
+      diameter 8.0  hazen_williams coefficient 120 length -2000 
+>>>CAUTION: length { -2000} is negative,...using abs val...
+>>>CAUTION: length { -2000} is very small (<0.2ft)!
       2 start 2 end 5
-... Trace. Entering: process_node
-pipe_number: 2
-node_idS: 2
-node_idE: 5
-110
-120
-212
-225
-310
-320
-410
-420
-510
-520
-610
-620
-710
-720
-810
-820
-910
-920
-1010
-1020
-length_vector
-0
-2000
-0
-0
-0
-0
-0
-0
-0
-0
-diam_vector
-0
-8
-0
-0
-0
-0
-0
-0
-0
-0
-hz_coeff_vector
-0
-120
-0
-0
-0
-0
-0
-0
-0
-0
-...Trace. Leaving: process_node
       3 start 5 end 6
-... Trace. Entering: process_node
-pipe_number: 3
-node_idS: 5
-node_idE: 6
-110
-120
-212
-225
-315
-326
-410
-420
-510
-520
-610
-620
-710
-720
-810
-820
-910
-920
-1010
-1020
-length_vector
-0
-2000
-2000
-0
-0
-0
-0
-0
-0
-0
-diam_vector
-0
-8
-8
-0
-0
-0
-0
-0
-0
-0
-hz_coeff_vector
-0
-120
-120
-0
-0
-0
-0
-0
-0
-0
-...Trace. Leaving: process_node
       8 start 3 end 4
-... Trace. Entering: process_node
-pipe_number: 8
-node_idS: 3
-node_idE: 4
-110
-120
-212
-225
-315
-326
-410
-420
-510
-520
-610
-620
-710
-720
-813
-824
-910
-920
-1010
-1020
-length_vector
-0
-2000
-2000
-0
-0
-0
-0
-2000
-0
-0
-diam_vector
-0
-8
-8
-0
-0
-0
-0
-8
-0
-0
-hz_coeff_vector
-0
-120
-120
-0
-0
-0
-0
-120
-0
-0
-...Trace. Leaving: process_node
       length 1500
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
       4 2 3
-... Trace. Entering: process_node
-pipe_number: 4
-node_idS: 2
-node_idE: 3
-110
-120
-212
-225
-315
-326
-412
-423
-510
-520
-610
-620
-710
-720
-813
-824
-910
-920
-1010
-1020
-length_vector
-0
-2000
-2000
-1500
-0
-0
-0
-2000
-0
-0
-diam_vector
-0
-8
-8
-8
-0
-0
-0
-8
-0
-0
-hz_coeff_vector
-0
-120
-120
-120
-0
-0
-0
-120
-0
-0
-...Trace. Leaving: process_node
       5 5 4
-... Trace. Entering: process_node
-pipe_number: 5
-node_idS: 5
-node_idE: 4
-110
-120
-212
-225
-315
-326
-412
-423
-515
-524
-610
-620
-710
-720
-813
-824
-910
-920
-1010
-1020
-length_vector
-0
-2000
-2000
-1500
-1500
-0
-0
-2000
-0
-0
-diam_vector
-0
-8
-8
-8
-8
-0
-0
-8
-0
-0
-hz_coeff_vector
-0
-120
-120
-120
-120
-0
-0
-120
-0
-0
-...Trace. Leaving: process_node
       diameter 10.0 length 1000
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
       1 1 2
-... Trace. Entering: process_node
-pipe_number: 1
-node_idS: 1
-node_idE: 2
-111
-122
-212
-225
-315
-326
-412
-423
-515
-524
-610
-620
-710
-720
-813
-824
-910
-920
-1010
-1020
-length_vector
-1000
-2000
-2000
-1500
-1500
-0
-0
-2000
-0
-0
-diam_vector
-10
-8
-8
-8
-8
-0
-0
-8
-0
-0
-hz_coeff_vector
-120
-120
-120
-120
-120
-0
-0
-120
-0
-0
-...Trace. Leaving: process_node
       length 2000
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
       9 4 7
-... Trace. Entering: process_node
-pipe_number: 9
-node_idS: 4
-node_idE: 7
-111
-122
-212
-225
-315
-326
-412
-423
-515
-524
-610
-620
-710
-720
-813
-824
-914
-927
-1010
-1020
-length_vector
-1000
-2000
-2000
-1500
-1500
-0
-0
-2000
-2000
-0
-diam_vector
-10
-8
-8
-8
-8
-0
-0
-8
-10
-0
-hz_coeff_vector
-120
-120
-120
-120
-120
-0
-0
-120
-120
-0
-...Trace. Leaving: process_node
       length 3000 diameter 6
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
       6 5 7
-... Trace. Entering: process_node
-pipe_number: 6
-node_idS: 5
-node_idE: 7
-111
-122
-212
-225
-315
-326
-412
-423
-515
-524
-615
-627
-710
-720
-813
-824
-914
-927
-1010
-1020
-length_vector
-1000
-2000
-2000
-1500
-1500
-3000
-0
-2000
-2000
-0
-diam_vector
-10
-8
-8
-8
-8
-6
-0
-8
-10
-0
-hz_coeff_vector
-120
-120
-120
-120
-120
-120
-0
-120
-120
-0
-...Trace. Leaving: process_node
       length 1500
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
       7 6 7
-... Trace. Entering: process_node
-pipe_number: 7
-node_idS: 6
-node_idE: 7
-111
-122
-212
-225
-315
-326
-412
-423
-515
-524
-615
-627
-716
-727
-813
-824
-914
-927
-1010
-1020
-length_vector
-1000
-2000
-2000
-1500
-1500
-3000
-1500
-2000
-2000
-0
-diam_vector
-10
-8
-8
-8
-8
-6
-6
-8
-10
-0
-hz_coeff_vector
-120
-120
-120
-120
-120
-120
-120
-120
-120
-0
-...Trace. Leaving: process_node
-      length 1500
-... Trace. Entering: check_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-... Trace. Entering: process_Len_diam_hw
-      7 6 7
-... Trace. Entering: process_node
-pipe_number: 7
-node_idS: 6
-node_idE: 7
-111
-122
-212
-225
-315
-326
-412
-423
-515
-524
-615
-627
-716
-727
-813
-824
-914
-927
-1010
-1020
-length_vector
-1000
-2000
-2000
-1500
-1500
-3000
-1500
-2000
-2000
-0
-diam_vector
-10
-8
-8
-8
-8
-6
-6
-8
-10
-0
-hz_coeff_vector
-120
-120
-120
-120
-120
-120
-120
-120
-120
-0
-...Trace. Leaving: process_node
       external flows
-... Trace. Entering: check_Len_diam_hw
-...Trace. Leaving: process_parameters
-...Trace. Leaving: process_propties
-... Trace. Entering: process_external
+>>>ERROR: wrong command { external} for pipe properties!
       5 0.5
       6 1.0
       3 -1.0
+>>> ERROR: flow { -1.0} convert to double failed!
       4 1.5
       7 1.5
       initial nodal heads
-flow_vector
-0
-0
--1
-1.5
-0.5
-1
-1.5
-...Trace. Leaving: process_external
-... Trace. Entering: process_initial
       2 190
       3 180
       4 160
@@ -661,27 +41,53 @@ flow_vector
       6 160
       7 150
       convergence tolerance 0.01
-...Trace. Leaving: process_initial
-... Trace. Entering: process_convergence
-...Trace. Leaving: process_convergence
+0.01
       maximum newton iterations 20
-... Trace. Entering: process_iterations
-...Trace. Leaving: process_iterations
       output data
-... Trace. Entering: process_output
-... Trace. Entering: process_output_data
-I will need to implement this now!
-...Trace. Leaving: process_output_data
-...Trace. Leaving: process_output
+0.01
+************************************************************************ 
+*                                                                      *
+*              Steady State Pressurized Pipe flow Analysis             *
+*                                                                      *
+*                 -- Tabular Listing of Network Data --                *
+*                                                                      *
+************************************************************************
+0.01
+Project:  Glenwood Estates Subdivision -Extension B-2018
+
+Number of Nodes: 7 Number of pipes: 9
+
+Reservoir Node: 10  Reservoir head: 200
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0      10.0        120.0
+  2         2         5      -2000.0       8.0        120.0
+  3         5         6      -2000.0       8.0        120.0
+  4         2         3       1500.0       8.0        120.0
+  5         5         4       1500.0       8.0        120.0
+  6         5         7       3000.0       6.0        120.0
+  7         6         7       1500.0       6.0        120.0
+  8         3         4      -2000.0       8.0        120.0
+  9         4         7       2000.0      10.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0               0.0
+  2          0.0             190.0
+  3          0.0             180.0
+  4          1.5             160.0
+  5          0.5             170.0
+  6          1.0             160.0
+  7          1.5             150.0
+
+Newton Tolerance:      0.01
       solve
-... Trace. Entering: process_solve
 COMMAND NOT YET IMPLEMENTED FOR SOLVE
-...Trace. Leaving: process_solve
       output results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_results
 COMMAND NOT YET IMPLEMENTED FOR OUTPUT RESULTS
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       stop
  Program Terminated by user 1

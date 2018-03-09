@@ -4,8 +4,8 @@
 void process_number(array <int> &node_table, vector<Real> &lengths,
                     vector<Real> &diameters, vector<Real> &hw_coeffs,
 					vector<Real> &external_flows, vector<Real> &initial_heads, 
-					int &max_pipes, int &max_nodes,
-					int &num_pipes, int &num_nodes, int default_num, bool &debug)
+					const int max_pipes, const int max_nodes,
+					int &num_pipes, int &num_nodes, bool &debug)
 {
 if (debug ==true){user_trace( 1, "process_number");}
 int i,j;
@@ -17,13 +17,13 @@ while( ! endcrd ())
 	 {
 	  if( ! integr(num_nodes)){ error_message(3); continue;}
 	  if( num_nodes > max_nodes){ error_message(4); num_nodes = max_nodes; continue;}
-	 if( num_nodes < 0){ error_message(5); num_nodes = default_num; continue;}
+	  if( num_nodes < 0){ error_message(5); istrue(); return;}
 	 }
    else if( matchs( "pipes", 4))
      {
 	  if( ! integr(num_pipes)){ error_message(20); continue;}
-	  if( num_pipes > max_pipes){ error_message(21); num_pipes = max_pipes; continue;}
-	  if( num_pipes < 0){ error_message(22); num_pipes = default_num; continue;}	  
+	  if( num_pipes > max_pipes){ error_message(21);num_pipes= max_pipes; continue;}
+	  if( num_pipes < 0){ error_message(22); istrue(); return;}	  
      }
    else 
      {

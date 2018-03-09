@@ -35,7 +35,7 @@ switch( mess_num )
      cout << ">>> ERROR: no of nodes {"<< title <<"} is not integer!\n";
      break;
    case 4:
-     cout << ">>>CAUTION: no of nodes {"<< title <<"} > max_nodes = 2000,...using default...\n" ;
+     cout << ">>>CAUTION: no of nodes {"<< title <<"} > max_nodes = 2000,...using max_nodes...\n" ;
      break;
    case 5:
      cout << ">>>CAUTION: no of nodes {"<< title <<"} is negative,...using default...\n" ;
@@ -86,10 +86,10 @@ switch( mess_num )
      cout << ">>> ERROR: no of pipes {"<< title <<"} is not integer!\n";
      break;
    case 21:
-     cout << ">>>CAUTION: no of pipes {"<< title <<"} > max_pipes = 4000,...using default...\n" ;
+     cout << ">>>CAUTION: no of pipes {"<< title <<"} > max_pipes = 4000,...using max_pipes...\n" ;
      break;
    case 22:
-     cout << ">>>CAUTION: no of pipes {"<< title <<"} is negative,...using default...\n" ;
+     cout << ">>>CAUTION: no of pipes {"<< title <<"} is negative!\n" ;
 	 break;
    case 23:
      cout << ">>>CAUTION: wrong keyword {"<< title <<"}, properties? \n" ;
@@ -101,20 +101,22 @@ switch( mess_num )
      cout << ">>>CAUTION: diameter {"<< title <<"} is negative,...using abs val...\n" ;
 	 break;
    case 26:
-     cout << ">>>CAUTION: hz_williams {"<< title <<"} is negative,...using abs val...\n" ;
+     cout << ">>>CAUTION: hz_williams {"<< title <<"} is negative!\n" ;
 	 break;
    case 27:
-     cout << ">>>CAUTION: length {"<< title <<"} is very small (<0.2ft)......\n" ;
+     cout << ">>>CAUTION: length {"<< title <<"} is very small (<0.2ft)!\n" ;
 	 break;
    case 28:
-     cout << ">>>CAUTION: diameter {"<< title <<"} is very small (<0.5in)......\n" ;
+     cout << ">>>CAUTION: diameter {"<< title <<"} is very small (<0.5in)!\n" ;
 	 break;
    case 29:
-     cout << ">>>CAUTION: Hz williams {"<< title <<"} is very small (<0.005)......\n" ;
+     cout << ">>>CAUTION: Hz williams {"<< title <<"} is very small (<0.005)!\n" ;
 	 break;
-
-	 case 30:
+   case 30:
      cout<< ">>> ERROR: head {"<< title <<"} convert to double failed!\n"; 
+     break;
+   case 31:
+     cout<< ">>> ERROR: flow number {"<< title <<"} is negative!\n"; 
      break;
    case 32:
      cout<< ">>> ERROR: debug word {"<< title <<"} invalid!\n"; 
@@ -125,10 +127,39 @@ switch( mess_num )
    case 36:
      cout << ">>> ERROR: iteration {"<< title <<"} is not integer!\n";
      break;
+   case 37:
+     cout << ">>> could not store {"<< title <<"} because no of nodes is negative!\n";
+     break;
+   case 38:
+     cout << ">>> could not store {"<< title <<"} because no of pipes is negative!\n";
+     break;
    case 40:
-   cout<< ">>> ERROR: work on it later {"<< title <<"} is not a double!\n"; 
+     cout << ">>>ERROR: reservoir node {"<< title <<"} is negative!\n";
+     break;
+   case 41:
+     cout << ">>>ERROR: reservoir head {"<< title <<"} is negative!\n";
+     break;
+   case 42:
+     cout << ">>>ERROR: External node  {"<< title <<"} is negative!\n";
+     break;
+   case 43:
+     cout << ">>>ERROR: wrong command {"<< title <<"} for pipe properties!\n";
+     break;
+   case 44:
+     cout << ">>>ERROR: Output invalid no of nodes is negative!\n";
      break;
 	 
+	 
+   case 50:
+     cout << ">>>ERROR: tolerance {"<< title <<"} > max_tol=10!\n";
+     break;
+   case 51:
+     cout << ">>>ERROR: tolerance {"<< title <<"} < min_tol=0.0001!\n";
+     break;
+	 
+   case 60:
+   cout<< ">>> ERROR: work on it later {"<< title <<"} is not a double!\n"; 
+     break;
    default:
      cout << " invalid message number..../n please crosscheck...\n";
      break;

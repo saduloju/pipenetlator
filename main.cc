@@ -8,9 +8,12 @@
 int main()
 {
 
-int max_nodes = 2000, max_pipes = 4000, default_num=10;
-int num_pipes, num_nodes; 
-int i, j;
+const int max_nodes = 2000, max_pipes = 4000; 
+const Real max_tol=10, min_tol=0.0001;
+const int max_iter=30, min_iter=2; 
+int num_pipes, num_nodes, reservoir_node; 
+Real reservoir_head, tol; 
+int i, j, counte=0;
 int new_read;
 bool debug = false;
 array <int> node_table;
@@ -19,7 +22,8 @@ vector<Real> diameters;
 vector<Real> external_flows;
 vector<Real> initial_heads;
 vector<Real> hw_coeffs;
-
+string title;
+ 
 init_scan ();
 
 new_read = true;
@@ -28,7 +32,11 @@ do
    if( new_read ) readsc ();
    if ( matchs( "Project" , 3))
       {
-		read_project(debug);
+		counte =++counte;
+		
+		read_project(node_table, lengths, diameters, 
+		             hw_coeffs, external_flows, initial_heads, 
+					 counte, title, debug);
 	    continue;
 	  }
    if ( matchs( "number" ,3))
@@ -36,12 +44,12 @@ do
 		process_number( node_table, lengths, diameters, 
 		               hw_coeffs, external_flows, 
 					   initial_heads, max_pipes, max_nodes,
-					   num_pipes, num_nodes, default_num, debug);
+					   num_pipes, num_nodes, debug);
         continue;		
 	  }
    if ( matchs( "reservoir" ,5))
       {
-		process_reservoir(debug);
+		process_reservoir(reservoir_node, reservoir_head, debug);
         continue;		
 	  }
    if ( matchs( "pipe" , 4))
@@ -60,13 +68,13 @@ do
 	  }
    if ( matchs( "initial" , 4))
       {
-	   process_initial(debug);
+	   process_initial(initial_heads, num_nodes, debug);
 	   new_read = false;
 	   continue;
 	  }
    if ( matchs( "convergence", 4))
       {
-	   process_convergence(debug);
+	   process_convergence(tol, min_tol, max_tol, debug);
 	   new_read = true;
 	   continue;
 	  }
@@ -84,7 +92,10 @@ do
 	  }
    if ( matchs( "output", 4))
       {
-	   process_output(debug);
+	   process_output(node_table, lengths, diameters, hw_coeffs,
+					external_flows, initial_heads, max_pipes, max_nodes,
+					num_pipes, num_nodes, reservoir_node, reservoir_head,
+					tol, title, debug);
 	   new_read = true;
 	   continue;
 	  }

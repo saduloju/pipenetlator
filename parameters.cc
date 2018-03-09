@@ -18,21 +18,24 @@ bool check;
 
     if(  integr(pipe_number))
 	  { //error_message(15); continue;}
+        if (pipe_number < 0){error_message(38); continue;}
 		if (pipe_number > num_pipes){error_message(16); continue;}//}
 	   //return;
       else
-	  {process_node(node_table, lengths, diameters,
+	    {
+	      process_node(node_table, lengths, diameters,
                	   hw_coeffs, pipe_number, length_value, 
 				   diam_value, hz_w_value, num_pipes, num_nodes, debug);
-	  continue;}
+	     continue;
+	    }
      }
-	 check= check_Len_diam_hw(LDH, debug);
+   check= check_Len_diam_hw(LDH, debug);
    if (check == true)
 	 {
-		process_Len_diam_hw(length_value, diam_value, hz_w_value, LDH, debug);
+		process_Len_diam_hw(length_value, diam_value, hz_w_value, num_nodes, LDH, debug);
 		continue;
 	 }
-	 else break;
+	 else { error_message(43); break;}
 		
 } while (true);
 
@@ -69,28 +72,29 @@ bool check_Len_diam_hw(int &LDH, bool &debug)
 #include "prototypes.h"
 	 
 void process_Len_diam_hw(Real &length_value, Real &diam_value, 
-                         Real &hz_w_value, int &LDH, bool &debug)
+                         Real &hz_w_value,int &num_nodes, int &LDH, bool &debug)
 {
   if (debug ==true){user_trace( 1, "process_Len_diam_hw");} 
 
   if ( LDH==1)
      {
 	if( ! numd(length_value)) {error_message(8);}
-	if(length_value < 0) {error_message(24); length_value= abs(length_value);}
-	if(length_value < 0.2) {error_message(24);}
+	if(num_nodes < 0) { error_message(38);}
+	if(length_value < 0) {error_message(24);}
+	if(length_value < 0.2) {error_message(27);}
      }
   if ( LDH==2)
      {
 	if( ! numd(diam_value)) {error_message(9);}
-	if(diam_value < 0) {error_message(25); diam_value= abs(diam_value);}
-    if(diam_value < 0.5) {error_message(24);}
+	if(diam_value < 0) {error_message(25);}
+    if(diam_value < 0.5) {error_message(28);}
 	}
   else if ( LDH==3)
     {
     matchs( "coeffients", 4);
     if( ! numd(hz_w_value)) {error_message(10);}
-	if(hz_w_value < 0) {error_message(26); hz_w_value= abs(hz_w_value);}
-    if(hz_w_value < 0.005) {error_message(24);}
+	if(hz_w_value < 0) {error_message(26);}
+    if(hz_w_value < 0.005) {error_message(29);}
     } 
 
 	
@@ -98,19 +102,23 @@ void process_Len_diam_hw(Real &length_value, Real &diam_value,
   {
    if ( matchs( "length", 3))
      {
-	 if( ! numd(length_value)) {error_message(8); continue;}
-    // process_parameters(inten);
+	  if( ! numd(length_value)) {error_message(8); continue;}
+	  if(num_nodes < 0) { error_message(38); return;}
+	  if(length_value < 0) {error_message(24);}
+	  if(length_value < 0.2) {error_message(27);}
      }
    if ( matchs( "diameter", 4))
      {
-	if( ! numd(diam_value)) {error_message(9); continue;}
-    // process_parameters(inten);
+	  if( ! numd(diam_value)) {error_message(9); continue;}
+	  if(diam_value < 0) {error_message(25);}
+      if(diam_value < 0.5) {error_message(28);}
      }
   else if ( matchs( "hazen_williams", 4))
     {
-      matchs( "coeffients", 4);
-      if( ! numd(hz_w_value)) {error_message(10); continue;}
-    // process_parameters(inten);
+     matchs( "coeffients", 4);
+     if( ! numd(hz_w_value)) {error_message(10); continue;}
+	 if(hz_w_value < 0) {error_message(26);}
+     if(hz_w_value < 0.005) {error_message(29);}
     } 
   else break;  
  }
@@ -152,10 +160,12 @@ while ( ! endcrd() )
  {
    matchs( "start", 4);
    if( ! integr(node_idS)) { error_message(11);continue;}
-   if (node_idS > num_nodes){error_message(18); continue;}
+   if (num_nodes < 0){error_message(37); return;}
+   if (node_idS > num_nodes){error_message(18); return;}
 
    matchs( "end", 3);
    if( ! integr(node_idE)) { error_message(12);continue;}
+   if (num_nodes < 0){error_message(37); continue;}
    if (node_idE > num_nodes){error_message(19); continue;}
 
    
