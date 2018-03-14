@@ -26,40 +26,42 @@ scan_contents(title,nchar_in_string);
 switch( mess_num ) 
  { 
    case 1 : 
-     cout << " Program Terminated by user 1" << flush;
+     cout << " Program Terminated by user " << flush;
 	 break;
    case 2 :
-     cout << " >>> ERROR: wrong command 2{"<< title <<"}....skip....\n";
+     cout << " >>> ERROR: wrong command {"<< title <<"}....skip....\n";
      break;
    case 3:
      cout << ">>> ERROR: no of nodes {"<< title <<"} is not integer!\n";
      break;
    case 4:
-     cout << ">>>CAUTION: no of nodes {"<< title <<"} > max_nodes = 2000,...using max_nodes...\n" ;
+     cout << ">>>CAUTION: no of nodes {"<< title <<"} > max_nodes = 2000";
+	 cout << "...using max_nodes...\n" ;
      break;
    case 5:
-     cout << ">>>CAUTION: no of nodes {"<< title <<"} is negative,...using default...\n" ;
+     cout << ">>>CAUTION: no of nodes {"<< title <<"} is negative,";
+	 cout<< "...using default...\n" ;
 	 break;
    case 6:
-     cout << ">>> ERROR: wrong command 6{"<< title <<"}" << endl ;
+     cout << ">>> ERROR: wrong command {"<< title <<"}" << endl ;
      break;
    case 7:
      cout<< ">>> ERROR: node number{"<< title <<"} not integer!\n";; 
      break;
    case 8:
-     cout<< ">>> ERROR: length 8 {"<< title <<"} convert to double failed!\n"; 
+     cout<< ">>> ERROR: length  {"<< title <<"} convert to double failed!\n"; 
      break;
    case 9:
-     cout<< ">>> ERROR: diameter 9{"<< title <<"} convert to double failed!\n"; 
+     cout<< ">>> ERROR: diameter {"<< title <<"} convert to double failed!\n"; 
      break;
    case 10:
-     cout<< ">>> ERROR: Hz_Ws_coeff. 10{"<< title <<"} convert to double failed!\n";
+     cout<< ">>> ERROR: Hz_Ws_coeff. {"<< title <<"} convert to double failed!\n";
      break;
    case 11:
-     cout << ">>> ERROR: start node 10{"<< title <<"} is not integer!\n";
+     cout << ">>> ERROR: start node {"<< title <<"} is not integer!\n";
      break;
    case 12:
-     cout<< ">>> ERROR: end node 11{"<< title <<"} convert to double failed!\n"; 
+     cout<< ">>> ERROR: end node {"<< title <<"} convert to double failed!\n"; 
      break;
    case 13:
      cout<< ">>> ERROR: flow {"<< title <<"} convert to double failed!\n";
@@ -68,7 +70,7 @@ switch( mess_num )
      cout<< ">>> ERROR: head {"<< title <<"} convert to double failed!\n"; 
      break;
    case 15:
-     cout << ">>> ERROR: pipe number 4{"<< title <<"} is not integer!\n"; 
+     cout << ">>> ERROR: pipe number {"<< title <<"} is not integer!\n"; 
      break;
    case 16:
      cout << ">>> ERROR: pipe number {"<< title <<"} > no of pipes!\n";
@@ -86,7 +88,8 @@ switch( mess_num )
      cout << ">>> ERROR: no of pipes {"<< title <<"} is not integer!\n";
      break;
    case 21:
-     cout << ">>>CAUTION: no of pipes {"<< title <<"} > max_pipes = 4000,...using max_pipes...\n" ;
+     cout << ">>>CAUTION: no of pipes {"<< title <<"}"; 
+	 cout << " max_pipes = 4000,...using max_pipes...\n" ;
      break;
    case 22:
      cout << ">>>CAUTION: no of pipes {"<< title <<"} is negative!\n" ;
@@ -95,10 +98,10 @@ switch( mess_num )
      cout << ">>>CAUTION: wrong keyword {"<< title <<"}, properties? \n" ;
 	 break;
    case 24:
-     cout << ">>>CAUTION: length {"<< title <<"} is negative,...using abs val...\n" ;
+     cout << ">>>CAUTION: length {"<< title <<"} is negative!\n" ;
 	 break;
    case 25:
-     cout << ">>>CAUTION: diameter {"<< title <<"} is negative,...using abs val...\n" ;
+     cout << ">>>CAUTION: diameter {"<< title <<"} is negative!\n" ;
 	 break;
    case 26:
      cout << ">>>CAUTION: hz_williams {"<< title <<"} is negative!\n" ;
@@ -128,7 +131,7 @@ switch( mess_num )
      cout << ">>> ERROR: iteration {"<< title <<"} is not integer!\n";
      break;
    case 37:
-     cout << ">>> could not store {"<< title <<"} because no of nodes is negative!\n";
+     cout << ">>> could not store flow {"<< title <<"} because no of nodes is negative!\n";
      break;
    case 38:
      cout << ">>> could not store {"<< title <<"} because no of pipes is negative!\n";
@@ -148,15 +151,27 @@ switch( mess_num )
    case 44:
      cout << ">>>ERROR: Output invalid no of nodes is negative!\n";
      break;
-	 
-	 
+   case 45:
+     cout<< ">>> ERROR: External flow {"<< title <<"} is negative!\n";
+     break;
+   case 46:
+     cout<< ">>> ERROR: initial nodal head {"<< title <<"} convert to double failed!\n";
+     break;	 
+   case 48:
+     cout<< ">>> ERROR: head {"<< title <<"} is negative!\n";
+     break;	 
    case 50:
      cout << ">>>ERROR: tolerance {"<< title <<"} > max_tol=10!\n";
      break;
    case 51:
      cout << ">>>ERROR: tolerance {"<< title <<"} < min_tol=0.0001!\n";
      break;
-	 
+   case 52:
+     cout << ">>>ERROR: iteration {"<< title <<"} > max_iter=30!\n";
+     break;
+   case 53:
+     cout << ">>>ERROR: iteration {"<< title <<"} < min_iter=2!\n";
+     break;	 
    case 60:
    cout<< ">>> ERROR: work on it later {"<< title <<"} is not a double!\n"; 
      break;

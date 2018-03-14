@@ -1,4 +1,12 @@
- 
+//*****************************************************************************
+//*             CEE 691                                                       *
+//*             project: Input Translator for PipeNetwork Simulator           *
+//*             header                                                        *
+//*             Author : Sunday Aduloju                                       *
+//*             submitted to Prof. Dodds                                      *
+//*             Last Modified: 3/9/2018                                       *
+//*                                                                           *
+//*****************************************************************************
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
