@@ -1,8 +1,6 @@
 project 'Glenwood Estates Subdivision -Extension B-2018'
 number of pipes 9 nodes 7
 reservoir at node 10 head 200
-magnet 100 goat 67
-c debug on
 pipe properties
 diameter 8.0  hazen_williams coefficient 120 length -2000 
 2 start 2 end 5
@@ -39,8 +37,4 @@ solve
 output results
 stop
 
-nodal loads
-1 force x 10
-9 moment y -25
-9 moment z 50.3 
-4 moment y 20.27
+

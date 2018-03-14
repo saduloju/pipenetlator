@@ -1,15 +1,9 @@
       project 'Glenwood Estates Subdivision -Extension B-2018'
       number of pipes 9 nodes 7
       reservoir at node 10 head 200
-      magnet 100 goat 67
- >>> ERROR: wrong command 2{ magnet}....skip....
- >>> ERROR: wrong command 2{ 100}....skip....
- >>> ERROR: wrong command 2{ goat}....skip....
- >>> ERROR: wrong command 2{ 67}....skip....
-      c debug on
       pipe properties
       diameter 8.0  hazen_williams coefficient 120 length -2000 
->>>CAUTION: length { -2000} is negative,...using abs val...
+>>>CAUTION: length { -2000} is negative!
 >>>CAUTION: length { -2000} is very small (<0.2ft)!
       2 start 2 end 5
       3 start 5 end 6
@@ -30,7 +24,7 @@
       5 0.5
       6 1.0
       3 -1.0
->>> ERROR: flow { -1.0} convert to double failed!
+>>> ERROR: flow { -1.0} is negative!
       4 1.5
       7 1.5
       initial nodal heads
@@ -78,16 +72,19 @@ Node  External Flow Rate  Initial Head
             (cfs)              (ft)
   1          0.0               0.0
   2          0.0             190.0
-  3          0.0             180.0
+  3         -1.0             180.0
   4          1.5             160.0
   5          0.5             170.0
   6          1.0             160.0
   7          1.5             150.0
 
 Newton Tolerance:      0.01
+
+Newton Iteration Limit:   20
+
       solve
 COMMAND NOT YET IMPLEMENTED FOR SOLVE
       output results
 COMMAND NOT YET IMPLEMENTED FOR OUTPUT RESULTS
       stop
- Program Terminated by user 1
+ Program Terminated by user 
