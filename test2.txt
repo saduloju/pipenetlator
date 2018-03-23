@@ -32,10 +32,8 @@ initial nodal heads
 7 150
 convergence tolerance 0.01
 maximum newton iterations 20
-output data
+output data results
 solve
-output results
-solve
+output data results
 stop
-
 

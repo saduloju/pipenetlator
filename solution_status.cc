@@ -1,22 +1,27 @@
+
+
 //*****************************************************************************
 //*             CEE 691                                                       *
 //*             project: Input Translator for PipeNetwork Simulator           *
-//*             header                                                        *
+//*             function : process_output_data function                       *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstring>
-#include <cassert>
-#include <cmath>
-#include <iomanip>
+#include "system.h"
+#include "prototypes.h"
+//
+//
+//
+//
+void solution_status( Real & maxr, int &kont, bool &debug)
+{
+if(debug){user_trace( 1, "solution_status");}
 
-#include "arrays.h"
-using namespace std;
+cout << "Iteration number = " << kont<< endl;  
+cout << "The maximum residual flow = "	<< maxr << endl;
 
-#include "scanlib.h"
+if(debug){user_trace( 2, "solution_status");}	
+return;
+}
