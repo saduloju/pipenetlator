@@ -16,7 +16,7 @@
 //
 void process_propties(array <int> &node_table, vector<Real> &lengths, 
                       vector<Real> &diameters, vector<Real> &hw_coeffs,
-					  int &num_pipes, int &num_nodes, bool &debug)
+					  int &num_pipes, int &num_nodes, bool &resolve, bool &debug)
 {
  if (debug ==true){user_trace( 1, "process_propties");}
 
@@ -30,7 +30,9 @@ void process_propties(array <int> &node_table, vector<Real> &lengths,
    error_message(23);
    
  }
-   
+ 
+resolve = true;
+ 
  if (debug ==true){user_trace( 2, "process_propties");}
 
  return;

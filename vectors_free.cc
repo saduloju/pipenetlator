@@ -1,22 +1,26 @@
 //*****************************************************************************
 //*             CEE 691                                                       *
 //*             project: Input Translator for PipeNetwork Simulator           *
-//*             header                                                        *
+//*             function : vectors_free function                            *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstring>
-#include <cassert>
-#include <cmath>
-#include <iomanip>
+#include "system.h"
+#include "prototypes.h"
 
-#include "arrays.h"
-using namespace std;
+void vectors_free(vector<Real> &final_heads,vector<Real> &residuals,
+                  vector<Real> &flow_rates, bool &debug)
+{
+	
+if (debug){user_trace( 1, "vectors_free");}	
+	
+ residuals.free();
+ final_heads.free();
+ flow_rates.free();
 
-#include "scanlib.h"
+if (debug){user_trace( 2, "vectors_free");}
+
+return;
+}

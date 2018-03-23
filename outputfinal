@@ -1,0 +1,686 @@
+      c 
+      c 
+      project 'Small test network'
+      number of pipes 3 nodes 3
+      reservoir at node 1 head 100
+      pipe properties
+       diameter 10 hazen_williams coefficient 120 length 1000
+          1 1 2
+       diameter 12
+          2 2 3
+       diameter 10 length 1500
+          3 1 3
+      external nodal flows
+       2 1.5
+       3 3.0
+      initial nodal heads
+       2 95
+       3 85
+      convergence tolerance 0.01
+      maximum newton iterations 10
+      output data
+... Trace. Entering: process_output
+... Trace. Entering: process_output_data
+***************************************************************** 
+*                                                               *
+*        Steady State Pressurized Pipe flow Analysis            *
+*                                                               *
+*           -- Tabular Listing of Network Data --               *
+*                                                               *
+*****************************************************************
+Project:  Small test network
+
+Number of Nodes: 3 Number of pipes: 3
+
+Reservoir Node: 1  Reservoir head: 100
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0      10.0        120.0
+  2         2         3       1000.0      12.0        120.0
+  3         1         3       1500.0      10.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0               0.0
+  2          1.5              95.0
+  3          3.0              85.0
+
+Newton Tolerance:      0.01
+
+Newton Iteration Limit:   10
+
+...Trace. Leaving: process_output_data
+...Trace. Leaving: process_output
+      solve
+
+Solution Status:
+---------------
+Iteration number = 1
+The maximum residual flow = 3.99
+Iteration number = 2
+The maximum residual flow = 3.78
+Iteration number = 3
+The maximum residual flow = 2.21
+Iteration number = 4
+The maximum residual flow = 2.12
+Iteration number = 5
+The maximum residual flow = 0.82
+Iteration number = 6
+The maximum residual flow = 0.24
+Iteration number = 7
+The maximum residual flow = 0.02
+Iteration number = 8
+The maximum residual flow = 0.00
+Solution is successful!
+
+      output results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_results
+
+***********************************************************
+*                                                         *
+*        Steady State Pressurized Pipe flow Analysis      *
+*                                                         *
+*           -- Results of Pipe flow Analysis --           *
+*                                                         *
+***********************************************************
+Pipe Solutions
+---------------
+pipe              Flow rates
+                    (cfs)
+  1                   2.5
+  2                   1.0
+  3                   2.0
+
+
+Nodal Solutions
+---------------
+Node              Nodal Heads            Residual Nodal Flows
+                    (ft)
+  1                 100.0                        0.00
+  2                  91.5                        0.00
+  3                  90.8                       -0.00
+
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
+      c 
+      c 
+      project 'Glenwood Estates Subdivision - Extension B-2013'
+      number of pipes 9 nodes 7
+      reservoir at node 1 head 200
+      pipe properties
+       diameter 8.0 hazen_williams coefficient 120 length 2000
+          2 start 2 end 5
+          3 start 5 end 6
+       length 1500
+          4 start 2 end 3
+          5 start 5 end 4
+       length 2000
+          8 start 3 end 4
+       diameter 10.0 length 1000
+          1  1  2
+       length 2000
+          9  4  7
+       length 3000 diameter 6
+          6  5  7
+       length 1500
+          7  6  7
+      external nodal flows
+       5 0.5
+       6 1.0
+       3 -1.0
+       4 1.5
+       7 1.5
+      initial nodal heads
+       2 190
+       3 180
+       4 160
+       5 170
+       6 160
+       7 150
+      convergence tolerance 0.01
+      maximum newton iterations 20
+      output data results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_data
+***************************************************************** 
+*                                                               *
+*        Steady State Pressurized Pipe flow Analysis            *
+*                                                               *
+*           -- Tabular Listing of Network Data --               *
+*                                                               *
+*****************************************************************
+Project:  Glenwood Estates Subdivision - Extension B-2013
+
+Number of Nodes: 7 Number of pipes: 9
+
+Reservoir Node: 1  Reservoir head: 200
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0      10.0        120.0
+  2         2         5       2000.0       8.0        120.0
+  3         5         6       2000.0       8.0        120.0
+  4         2         3       1500.0       8.0        120.0
+  5         5         4       1500.0       8.0        120.0
+  6         5         7       3000.0       6.0        120.0
+  7         6         7       1500.0       6.0        120.0
+  8         3         4       2000.0       8.0        120.0
+  9         4         7       2000.0      10.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0               0.0
+  2          0.0             190.0
+  3         -1.0             180.0
+  4          1.5             160.0
+  5          0.5             170.0
+  6          1.0             160.0
+  7          1.5             150.0
+
+Newton Tolerance:      0.01
+
+Newton Iteration Limit:   20
+
+...Trace. Leaving: process_output_data
+... Trace. Entering: process_output_results
+>>> ChECK! Results not yet available !
+>>> please include solve command before output result !
+...Trace. Leaving: process_output
+      solve
+
+Solution Status:
+---------------
+Iteration number = 1
+The maximum residual flow = 1.79
+Iteration number = 2
+The maximum residual flow = 0.78
+Iteration number = 3
+The maximum residual flow = 0.36
+Iteration number = 4
+The maximum residual flow = 0.13
+Iteration number = 5
+The maximum residual flow = 0.03
+Iteration number = 6
+The maximum residual flow = 0.00
+Solution is successful!
+
+      output results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_results
+
+***********************************************************
+*                                                         *
+*        Steady State Pressurized Pipe flow Analysis      *
+*                                                         *
+*           -- Results of Pipe flow Analysis --           *
+*                                                         *
+***********************************************************
+Pipe Solutions
+---------------
+pipe              Flow rates
+                    (cfs)
+  1                   3.5
+  2                   2.3
+  3                   0.9
+  4                   1.2
+  5                   0.6
+  6                   0.3
+  7                  -0.1
+
+
+Nodal Solutions
+---------------
+Node              Nodal Heads            Residual Nodal Flows
+                    (ft)
+  1                 200.0                        0.00
+  2                 183.5                        0.00
+  3                 174.1                       -0.00
+  4                 134.2                       -0.00
+  5                 137.0                        0.00
+  6                 128.9                       -0.00
+  7                 129.2                        0.00
+
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
+      solve
+ No modification to existing data!
+ ....The earlier solution is still valid
+
+      output results
+... Trace. Entering: process_output
+No new solution from solve command
+No need to output result 
+      c 
+      external flows
+       5 0.6
+      solve
+
+Solution Status:
+---------------
+Iteration number = 1
+The maximum residual flow = 0.10
+Iteration number = 2
+The maximum residual flow = 0.00
+Solution is successful!
+
+      output data results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_data
+***************************************************************** 
+*                                                               *
+*        Steady State Pressurized Pipe flow Analysis            *
+*                                                               *
+*           -- Tabular Listing of Network Data --               *
+*                                                               *
+*****************************************************************
+Project:  Glenwood Estates Subdivision - Extension B-2013
+
+Number of Nodes: 7 Number of pipes: 9
+
+Reservoir Node: 1  Reservoir head: 200
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0      10.0        120.0
+  2         2         5       2000.0       8.0        120.0
+  3         5         6       2000.0       8.0        120.0
+  4         2         3       1500.0       8.0        120.0
+  5         5         4       1500.0       8.0        120.0
+  6         5         7       3000.0       6.0        120.0
+  7         6         7       1500.0       6.0        120.0
+  8         3         4       2000.0       8.0        120.0
+  9         4         7       2000.0      10.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0             200.0
+  2          0.0             182.6
+  3         -1.0             172.6
+  4          1.5             131.3
+  5          0.6             133.9
+  6          1.0             125.9
+  7          1.5             126.3
+
+Newton Tolerance:      0.01
+
+Newton Iteration Limit:   20
+
+...Trace. Leaving: process_output_data
+... Trace. Entering: process_output_results
+
+***********************************************************
+*                                                         *
+*        Steady State Pressurized Pipe flow Analysis      *
+*                                                         *
+*           -- Results of Pipe flow Analysis --           *
+*                                                         *
+***********************************************************
+Pipe Solutions
+---------------
+pipe              Flow rates
+                    (cfs)
+  1                   3.6
+  2                   2.4
+  3                   0.9
+  4                   1.2
+  5                   0.6
+  6                   0.3
+  7                  -0.1
+
+
+Nodal Solutions
+---------------
+Node              Nodal Heads            Residual Nodal Flows
+                    (ft)
+  1                 200.0                        0.00
+  2                 182.6                        0.00
+  3                 172.6                       -0.00
+  4                 131.3                       -0.00
+  5                 133.9                        0.00
+  6                 125.9                       -0.00
+  7                 126.3                        0.00
+
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
+      convergence tolerance 0.1
+      solve
+
+Solution Status:
+---------------
+Iteration number = 1
+The maximum residual flow = 0.00
+Solution is successful!
+
+      output results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_results
+
+***********************************************************
+*                                                         *
+*        Steady State Pressurized Pipe flow Analysis      *
+*                                                         *
+*           -- Results of Pipe flow Analysis --           *
+*                                                         *
+***********************************************************
+Pipe Solutions
+---------------
+pipe              Flow rates
+                    (cfs)
+  1                   3.6
+  2                   2.4
+  3                   0.9
+  4                   1.2
+  5                   0.6
+  6                   0.3
+  7                  -0.1
+
+
+Nodal Solutions
+---------------
+Node              Nodal Heads            Residual Nodal Flows
+                    (ft)
+  1                 200.0                        0.00
+  2                 182.6                        0.00
+  3                 172.6                       -0.00
+  4                 131.3                       -0.00
+  5                 133.9                        0.00
+  6                 125.9                       -0.00
+  7                 126.3                        0.00
+
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
+      c 
+      c 
+      project 'Test of a Larger Network'
+       number of pipes 38 nodes 24
+       reservoir at node 1 head 400
+       pipe properties
+        diameter 8.0 hazen_williams coefficient 120 length 1000
+         1 1 2
+         2 2 3
+         3 3 4
+         4 4 5
+         5 5 6
+         6 7 8
+         7 8 9
+         8 9 10
+         9 10 11
+        10 11 12
+        11 13 14
+        12 14 15
+        13 15 16
+        14 16 17
+        15 17 18
+        16 19 20
+        17 20 21
+        18 21 22
+        19 22 23
+        20 23 24
+        21 7 1
+        22 13 7
+        23 19 13
+        24 8 2
+        25 14 8
+        26 20 14
+        27 9 3
+        28 15 9
+        29 21 15
+        30 10 4
+        31 16 10
+        32 22 16
+        33 11 5
+        34 17 11
+        35 23 17
+        36 12 6
+        37 18 12
+        38 24 18
+      external nodal flows
+       8 3
+       15 1
+       16 1
+       23 2
+       24 2
+       19 2
+       6 2
+       initial nodal heads
+        2 190
+        3 180
+        4 160
+        5 170
+        6 160
+        7 150
+        8 140
+        9 130
+       10 120
+       11 110
+       12 100
+       13 90
+       14 80
+       15 75
+       16 70
+       17 65
+       18 60
+       19 55
+       20 50
+       21 45
+       22 40
+       23 35
+       24 30
+      convergence tolerance 0.01
+      maximum newton iterations 40
+      solve
+
+Solution Status:
+---------------
+Iteration number = 1
+The maximum residual flow = 6.88
+Iteration number = 2
+The maximum residual flow = 4.44
+Iteration number = 3
+The maximum residual flow = 4.83
+Iteration number = 4
+The maximum residual flow = 2.45
+Iteration number = 5
+The maximum residual flow = 2.36
+Iteration number = 6
+The maximum residual flow = 1.53
+Iteration number = 7
+The maximum residual flow = 1.47
+Iteration number = 8
+The maximum residual flow = 1.12
+Iteration number = 9
+The maximum residual flow = 0.79
+Iteration number = 10
+The maximum residual flow = 0.53
+Iteration number = 11
+The maximum residual flow = 0.38
+Iteration number = 12
+The maximum residual flow = 0.23
+Iteration number = 13
+The maximum residual flow = 0.25
+Iteration number = 14
+The maximum residual flow = 0.11
+Iteration number = 15
+The maximum residual flow = 0.05
+Iteration number = 16
+The maximum residual flow = 0.01
+Iteration number = 17
+The maximum residual flow = 0.00
+Solution is successful!
+
+      output data results
+... Trace. Entering: process_output
+... Trace. Entering: process_output_data
+***************************************************************** 
+*                                                               *
+*        Steady State Pressurized Pipe flow Analysis            *
+*                                                               *
+*           -- Tabular Listing of Network Data --               *
+*                                                               *
+*****************************************************************
+Project:  Test of a Larger Network
+
+Number of Nodes: 24 Number of pipes: 38
+
+Reservoir Node: 1  Reservoir head: 400
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0       8.0        120.0
+  2         2         3       1000.0       8.0        120.0
+  3         3         4       1000.0       8.0        120.0
+  4         4         5       1000.0       8.0        120.0
+  5         5         6       1000.0       8.0        120.0
+  6         7         8       1000.0       8.0        120.0
+  7         8         9       1000.0       8.0        120.0
+  8         9        10       1000.0       8.0        120.0
+  9        10        11       1000.0       8.0        120.0
+ 10        11        12       1000.0       8.0        120.0
+ 11        13        14       1000.0       8.0        120.0
+ 12        14        15       1000.0       8.0        120.0
+ 13        15        16       1000.0       8.0        120.0
+ 14        16        17       1000.0       8.0        120.0
+ 15        17        18       1000.0       8.0        120.0
+ 16        19        20       1000.0       8.0        120.0
+ 17        20        21       1000.0       8.0        120.0
+ 18        21        22       1000.0       8.0        120.0
+ 19        22        23       1000.0       8.0        120.0
+ 20        23        24       1000.0       8.0        120.0
+ 21         7         1       1000.0       8.0        120.0
+ 22        13         7       1000.0       8.0        120.0
+ 23        19        13       1000.0       8.0        120.0
+ 24         8         2       1000.0       8.0        120.0
+ 25        14         8       1000.0       8.0        120.0
+ 26        20        14       1000.0       8.0        120.0
+ 27         9         3       1000.0       8.0        120.0
+ 28        15         9       1000.0       8.0        120.0
+ 29        21        15       1000.0       8.0        120.0
+ 30        10         4       1000.0       8.0        120.0
+ 31        16        10       1000.0       8.0        120.0
+ 32        22        16       1000.0       8.0        120.0
+ 33        11         5       1000.0       8.0        120.0
+ 34        17        11       1000.0       8.0        120.0
+ 35        23        17       1000.0       8.0        120.0
+ 36        12         6       1000.0       8.0        120.0
+ 37        18        12       1000.0       8.0        120.0
+ 38        24        18       1000.0       8.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0             400.0
+  2          0.0             245.0
+  3          0.0             198.5
+  4          0.0             178.7
+  5          0.0             167.7
+  6          2.0             159.9
+  7          0.0             247.2
+  8          3.0             205.6
+  9          0.0             191.1
+ 10          0.0             176.9
+ 11          0.0             167.4
+ 12          0.0             162.3
+ 13          0.0             204.1
+ 14          0.0             195.5
+ 15          1.0             183.4
+ 16          1.0             172.6
+ 17          0.0             165.1
+ 18          0.0             161.7
+ 19          2.0             188.4
+ 20          0.0             188.5
+ 21          0.0             182.5
+ 22          0.0             172.3
+ 23          2.0             159.1
+ 24          2.0             155.5
+
+Newton Tolerance:      0.01
+
+Newton Iteration Limit:   40
+
+...Trace. Leaving: process_output_data
+... Trace. Entering: process_output_results
+
+***********************************************************
+*                                                         *
+*        Steady State Pressurized Pipe flow Analysis      *
+*                                                         *
+*           -- Results of Pipe flow Analysis --           *
+*                                                         *
+***********************************************************
+Pipe Solutions
+---------------
+pipe              Flow rates
+                    (cfs)
+  1                   6.5
+  2                   3.4
+  3                   2.1
+  4                   1.6
+  5                   1.3
+  6                   3.2
+  7                   1.8
+  8                   1.8
+  9                   1.4
+ 10                   1.0
+ 11                   1.4
+ 12                   1.6
+ 13                   1.5
+ 14                   1.3
+ 15                   0.8
+ 16                  -0.1
+ 17                   1.1
+ 18                   1.5
+ 19                   1.7
+ 20                   0.9
+ 21                  -6.5
+ 22                  -3.3
+ 23                  -1.9
+ 24                  -3.1
+
+
+Nodal Solutions
+---------------
+Node              Nodal Heads            Residual Nodal Flows
+                    (ft)
+  1                 400.0                        0.00
+  2                 245.0                        0.00
+  3                 198.5                        0.00
+  4                 178.7                        0.00
+  5                 167.7                        0.00
+  6                 159.9                       -0.00
+  7                 247.2                        0.00
+  8                 205.6                        0.00
+  9                 191.1                       -0.00
+ 10                 176.9                        0.00
+ 11                 167.4                       -0.00
+ 12                 162.3                        0.00
+ 13                 204.1                        0.00
+ 14                 195.5                       -0.00
+ 15                 183.4                        0.00
+ 16                 172.6                        0.00
+ 17                 165.1                       -0.00
+ 18                 161.7                       -0.00
+ 19                 188.4                       -0.00
+ 20                 188.5                        0.00
+ 21                 182.5                       -0.00
+ 22                 172.3                       -0.00
+ 23                 159.1                       -0.00
+ 24                 155.5                       -0.00
+
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
+      c 
+      stop
+ Program Terminated by user 

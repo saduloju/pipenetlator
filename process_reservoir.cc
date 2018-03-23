@@ -13,7 +13,7 @@
 //
 // reads the reservoir nodes and heads
 //
-void process_reservoir(int &reservoir_node, Real &reservoir_head, bool &debug)
+void process_reservoir(int &reservoir_node, Real &reservoir_head, bool &resolve, bool &debug)
 {
 if (debug ==true){user_trace( 1, "process_reservoir");}	
 
@@ -47,6 +47,9 @@ while( ! endcrd ())
  }
 reservoir_node = node_num;
 reservoir_head = head_value;
+
+resolve= true;
+
 if (debug ==true){user_trace( 2, "process_reservoir");}	
 
 return;

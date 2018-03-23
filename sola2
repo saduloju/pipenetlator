@@ -18,17 +18,11 @@
       length 1500
       7 6 7
       external flows
-... Trace. Entering: process_external
       5 0.5
-0.5
       6 1.0
-1
       3 -1.0
--1
       4 1.5
-1.5
       7 1.5
-1.5
       initial nodal heads
       2 190
       3 180
@@ -38,7 +32,9 @@
       7 150
       convergence tolerance 0.01
       maximum newton iterations 20
-      output data
+      output data results
+... Trace. Entering: process_output
+>>>just checking stuff  { data} delete later... Trace. Entering: process_output_data
 ***************************************************************** 
 *                                                               *
 *        Steady State Pressurized Pipe flow Analysis            *
@@ -81,6 +77,8 @@ Newton Tolerance:      0.01
 
 Newton Iteration Limit:   20
 
+...Trace. Leaving: process_output_data
+...Trace. Leaving: process_output
       solve
 
 Solution Status:
@@ -113,7 +111,53 @@ Solution Status:
 Iteration number = 6
 The maximum residual flow = 0.00
 Solution is successful!
-      output results
+      output data results
+... Trace. Entering: process_output
+>>>just checking stuff  { data} delete later... Trace. Entering: process_output_data
+***************************************************************** 
+*                                                               *
+*        Steady State Pressurized Pipe flow Analysis            *
+*                                                               *
+*           -- Tabular Listing of Network Data --               *
+*                                                               *
+*****************************************************************
+Project:  Glenwood Estates Subdivision -Extension B-2018
+
+Number of Nodes: 7 Number of pipes: 9
+
+Reservoir Node: 1  Reservoir head: 200
+Pipe Properties
+---------------
+Pipe   Start-Node  End-Node   Length    Diameter  Hazen Coefficient
+                               (ft)       (in)
+  1         1         2       1000.0      10.0        120.0
+  2         2         5       2000.0       8.0        120.0
+  3         5         6       2000.0       8.0        120.0
+  4         2         3       1500.0       8.0        120.0
+  5         5         4       1500.0       8.0        120.0
+  6         5         7       3000.0       6.0        120.0
+  7         6         7       1500.0       6.0        120.0
+  8         3         4       2000.0       8.0        120.0
+  9         4         7       2000.0      10.0        120.0
+
+External Nodal Flows and Initial Heads
+--------------------------------------
+Node  External Flow Rate  Initial Head
+            (cfs)              (ft)
+  1          0.0             200.0
+  2          0.0             183.5
+  3         -1.0             174.1
+  4          1.5             134.2
+  5          0.5             137.0
+  6          1.0             128.9
+  7          1.5             129.2
+
+Newton Tolerance:      0.01
+
+Newton Iteration Limit:   20
+
+...Trace. Leaving: process_output_data
+... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -147,8 +191,7 @@ Node              Nodal Heads            Residual Nodal Flows
   6                 128.9                       -0.00
   7                 129.2                        0.00
 
-      solve
- No modification to existing data!
- ....The earlier solution is still valid
+...Trace. Leaving: process_output_results
+...Trace. Leaving: process_output
       stop
  Program Terminated by user 

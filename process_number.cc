@@ -17,7 +17,7 @@ void process_number(array <int> &node_table, vector<Real> &lengths,
                     vector<Real> &diameters, vector<Real> &hw_coeffs,
 					vector<Real> &external_flows, vector<Real> &initial_heads, 
 					const int max_pipes, const int max_nodes,
-					int &num_pipes, int &num_nodes, bool &debug)
+					int &num_pipes, int &num_nodes,bool &resolve, bool &debug)
 {
 if (debug ==true){user_trace( 1, "process_number");}
 int i,j;	
@@ -67,7 +67,9 @@ while( ! endcrd ())
 for( i=1; i<=num_pipes; i++)
    {for(j=1; j<=2 ; j++){node_table(i,j)=0;}}
 
+resolve=true;
 if (debug ==true){user_trace( 2, "process_number");}
+
 return;
 }
 
