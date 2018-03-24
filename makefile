@@ -5,7 +5,7 @@
 C++  = g++
 C++FLAGS =  -c -w
 #
-OBJECTS = scan.o  main.o user_messages.o error_messages.o trace.o read_project.o\
+OBJECTS = scan.o  main.o trace.o debug.o user_messages.o error_messages.o  read_project.o\
           process_number.o create_vectors.o vectors_free.o process_reservoir.o parameters.o \
           properties.o external.o initial_heads.o convergence.o linkup.o \
 		  iterations.o output.o output_data.o output_results.o process_solve.o\
@@ -18,6 +18,8 @@ project1 : ${OBJECTS}
 #         list each source file and any dependencies
 #
 main.o: main.cc prototypes.h system.h arrays.h scanlib.h
+trace.o: trace.cc prototypes.h system.h arrays.h scanlib.h
+debug.o: debug.cc prototypes.h system.h arrays.h scanlib.h
 read_project.o: read_project.cc prototypes.h system.h arrays.h scanlib.h
 process_number.o: process_number.cc prototypes.h system.h arrays.h scanlib.h
 create_vectors.o: create_vectors.cc prototypes.h system.h arrays.h scanlib.h
@@ -27,7 +29,6 @@ parameters.o: parameters.cc prototypes.h system.h arrays.h scanlib.h
 properties.o: properties.cc prototypes.h system.h arrays.h scanlib.h
 error_messages.o: error_messages.cc prototypes.h system.h arrays.h scanlib.h
 user_messages.o: user_messages.cc prototypes.h system.h arrays.h scanlib.h
-trace.o: trace.cc prototypes.h system.h arrays.h scanlib.h
 external.o: external.cc prototypes.h system.h arrays.h scanlib.h
 initial_heads.o: initial_heads.cc prototypes.h system.h arrays.h scanlib.h
 convergence.o: convergence.cc prototypes.h system.h arrays.h scanlib.h
