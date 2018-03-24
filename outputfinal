@@ -19,8 +19,6 @@
       convergence tolerance 0.01
       maximum newton iterations 10
       output data
-... Trace. Entering: process_output
-... Trace. Entering: process_output_data
 *****************************************************************
 *                                                               *
 *        Steady State Pressurized Pipe flow Analysis            *
@@ -53,8 +51,6 @@ Newton Tolerance:      0.01
 
 Newton Iteration Limit:   10
 
-...Trace. Leaving: process_output_data
-...Trace. Leaving: process_output
       solve
 
 Solution Status:
@@ -78,8 +74,6 @@ The maximum residual flow = 0.000
 >>> Non linear solution converged!
 
       output results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -90,23 +84,21 @@ The maximum residual flow = 0.000
 ***********************************************************
 Water flow rates in pipes
 -------------------------
-pipe              Flow rates
-                    (cfs)
-  1                   2.5
-  2                   1.0
-  3                   2.0
+pipe           Flow rates
+                 (cfs)
+  1                2.5
+  2                1.0
+  3                2.0
 
 
 Nodal Pressures and Residual flows
 ----------------------------------
-Node              Nodal Heads            Nodal Residual Flows
-                    (ft)
-  1                 100.0                       0.000
-  2                  91.5                       0.000
-  3                  90.8                      -0.000
+Node           Nodal Heads         Nodal Residual Flows
+                 (ft)
+  1              100.0                    0.000
+  2               91.5                    0.000
+  3               90.8                   -0.000
 
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       c 
       c 
       project 'Glenwood Estates Subdivision - Extension B-2013'
@@ -145,8 +137,6 @@ Node              Nodal Heads            Nodal Residual Flows
       convergence tolerance 0.01
       maximum newton iterations 20
       output data results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_data
 *****************************************************************
 *                                                               *
 *        Steady State Pressurized Pipe flow Analysis            *
@@ -189,11 +179,8 @@ Newton Tolerance:      0.01
 
 Newton Iteration Limit:   20
 
-...Trace. Leaving: process_output_data
-... Trace. Entering: process_output_results
 >>>CHECK! Results not yet available !
 >>>...please include solve command before output result !
-...Trace. Leaving: process_output
       solve
 
 Solution Status:
@@ -213,8 +200,6 @@ The maximum residual flow = 0.004
 >>> Non linear solution converged!
 
       output results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -225,37 +210,34 @@ The maximum residual flow = 0.004
 ***********************************************************
 Water flow rates in pipes
 -------------------------
-pipe              Flow rates
-                    (cfs)
-  1                   3.5
-  2                   2.3
-  3                   0.9
-  4                   1.2
-  5                   0.6
-  6                   0.3
-  7                  -0.1
+pipe           Flow rates
+                 (cfs)
+  1                3.5
+  2                2.3
+  3                0.9
+  4                1.2
+  5                0.6
+  6                0.3
+  7               -0.1
 
 
 Nodal Pressures and Residual flows
 ----------------------------------
-Node              Nodal Heads            Nodal Residual Flows
-                    (ft)
-  1                 200.0                       0.000
-  2                 183.5                       0.000
-  3                 174.1                      -0.000
-  4                 134.2                      -0.000
-  5                 137.0                       0.000
-  6                 128.9                      -0.004
-  7                 129.2                       0.004
+Node           Nodal Heads         Nodal Residual Flows
+                 (ft)
+  1              200.0                    0.000
+  2              183.5                    0.000
+  3              174.1                   -0.000
+  4              134.2                   -0.000
+  5              137.0                    0.000
+  6              128.9                   -0.004
+  7              129.2                    0.004
 
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       solve
 >>> There is no modification to existing data!
 >>> ....The earlier solution is still valid
 
       output results
-... Trace. Entering: process_output
 >>>No new solution from solve command
 >>>...No need to output result 
       c 
@@ -272,8 +254,6 @@ The maximum residual flow = 0.001
 >>> Non linear solution converged!
 
       output data results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_data
 *****************************************************************
 *                                                               *
 *        Steady State Pressurized Pipe flow Analysis            *
@@ -316,8 +296,6 @@ Newton Tolerance:      0.01
 
 Newton Iteration Limit:   20
 
-...Trace. Leaving: process_output_data
-... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -328,31 +306,29 @@ Newton Iteration Limit:   20
 ***********************************************************
 Water flow rates in pipes
 -------------------------
-pipe              Flow rates
-                    (cfs)
-  1                   3.6
-  2                   2.4
-  3                   0.9
-  4                   1.2
-  5                   0.6
-  6                   0.3
-  7                  -0.1
+pipe           Flow rates
+                 (cfs)
+  1                3.6
+  2                2.4
+  3                0.9
+  4                1.2
+  5                0.6
+  6                0.3
+  7               -0.1
 
 
 Nodal Pressures and Residual flows
 ----------------------------------
-Node              Nodal Heads            Nodal Residual Flows
-                    (ft)
-  1                 200.0                       0.000
-  2                 182.6                       0.000
-  3                 172.6                      -0.000
-  4                 131.3                      -0.001
-  5                 133.9                       0.000
-  6                 125.9                      -0.000
-  7                 126.3                       0.000
+Node           Nodal Heads         Nodal Residual Flows
+                 (ft)
+  1              200.0                    0.000
+  2              182.6                    0.000
+  3              172.6                   -0.000
+  4              131.3                   -0.001
+  5              133.9                    0.000
+  6              125.9                   -0.000
+  7              126.3                    0.000
 
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       convergence tolerance 0.1
       solve
 
@@ -363,8 +339,6 @@ The maximum residual flow = 0.000
 >>> Non linear solution converged!
 
       output results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -375,31 +349,29 @@ The maximum residual flow = 0.000
 ***********************************************************
 Water flow rates in pipes
 -------------------------
-pipe              Flow rates
-                    (cfs)
-  1                   3.6
-  2                   2.4
-  3                   0.9
-  4                   1.2
-  5                   0.6
-  6                   0.3
-  7                  -0.1
+pipe           Flow rates
+                 (cfs)
+  1                3.6
+  2                2.4
+  3                0.9
+  4                1.2
+  5                0.6
+  6                0.3
+  7               -0.1
 
 
 Nodal Pressures and Residual flows
 ----------------------------------
-Node              Nodal Heads            Nodal Residual Flows
-                    (ft)
-  1                 200.0                       0.000
-  2                 182.6                       0.000
-  3                 172.6                      -0.000
-  4                 131.3                      -0.000
-  5                 133.9                       0.000
-  6                 125.9                      -0.000
-  7                 126.3                       0.000
+Node           Nodal Heads         Nodal Residual Flows
+                 (ft)
+  1              200.0                    0.000
+  2              182.6                    0.000
+  3              172.6                   -0.000
+  4              131.3                   -0.000
+  5              133.9                    0.000
+  6              125.9                   -0.000
+  7              126.3                    0.000
 
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       c 
       c 
       project 'Test of a Larger Network'
@@ -520,8 +492,6 @@ The maximum residual flow = 0.000
 >>> Non linear solution converged!
 
       output data results
-... Trace. Entering: process_output
-... Trace. Entering: process_output_data
 *****************************************************************
 *                                                               *
 *        Steady State Pressurized Pipe flow Analysis            *
@@ -610,8 +580,6 @@ Newton Tolerance:      0.01
 
 Newton Iteration Limit:   40
 
-...Trace. Leaving: process_output_data
-... Trace. Entering: process_output_results
 
 ***********************************************************
 *                                                         *
@@ -622,65 +590,63 @@ Newton Iteration Limit:   40
 ***********************************************************
 Water flow rates in pipes
 -------------------------
-pipe              Flow rates
-                    (cfs)
-  1                   6.5
-  2                   3.4
-  3                   2.1
-  4                   1.6
-  5                   1.3
-  6                   3.2
-  7                   1.8
-  8                   1.8
-  9                   1.4
- 10                   1.0
- 11                   1.4
- 12                   1.6
- 13                   1.5
- 14                   1.3
- 15                   0.8
- 16                  -0.1
- 17                   1.1
- 18                   1.5
- 19                   1.7
- 20                   0.9
- 21                  -6.5
- 22                  -3.3
- 23                  -1.9
- 24                  -3.1
+pipe           Flow rates
+                 (cfs)
+  1                6.5
+  2                3.4
+  3                2.1
+  4                1.6
+  5                1.3
+  6                3.2
+  7                1.8
+  8                1.8
+  9                1.4
+ 10                1.0
+ 11                1.4
+ 12                1.6
+ 13                1.5
+ 14                1.3
+ 15                0.8
+ 16               -0.1
+ 17                1.1
+ 18                1.5
+ 19                1.7
+ 20                0.9
+ 21               -6.5
+ 22               -3.3
+ 23               -1.9
+ 24               -3.1
 
 
 Nodal Pressures and Residual flows
 ----------------------------------
-Node              Nodal Heads            Nodal Residual Flows
-                    (ft)
-  1                 400.0                       0.000
-  2                 245.0                       0.000
-  3                 198.5                       0.000
-  4                 178.7                       0.000
-  5                 167.7                       0.000
-  6                 159.9                      -0.000
-  7                 247.2                       0.000
-  8                 205.6                       0.000
-  9                 191.1                      -0.000
- 10                 176.9                       0.000
- 11                 167.4                      -0.000
- 12                 162.3                       0.000
- 13                 204.1                       0.000
- 14                 195.5                      -0.000
- 15                 183.4                       0.000
- 16                 172.6                       0.000
- 17                 165.1                      -0.000
- 18                 161.7                      -0.000
- 19                 188.4                      -0.000
- 20                 188.5                       0.000
- 21                 182.5                      -0.000
- 22                 172.3                      -0.000
- 23                 159.1                      -0.000
- 24                 155.5                      -0.000
+Node           Nodal Heads         Nodal Residual Flows
+                 (ft)
+  1              400.0                    0.000
+  2              245.0                    0.000
+  3              198.5                    0.000
+  4              178.7                    0.000
+  5              167.7                    0.000
+  6              159.9                   -0.000
+  7              247.2                    0.000
+  8              205.6                    0.000
+  9              191.1                   -0.000
+ 10              176.9                    0.000
+ 11              167.4                   -0.000
+ 12              162.3                    0.000
+ 13              204.1                    0.000
+ 14              195.5                   -0.000
+ 15              183.4                    0.000
+ 16              172.6                    0.000
+ 17              165.1                   -0.000
+ 18              161.7                   -0.000
+ 19              188.4                   -0.000
+ 20              188.5                    0.000
+ 21              182.5                   -0.000
+ 22              172.3                   -0.000
+ 23              159.1                   -0.000
+ 24              155.5                   -0.000
 
-...Trace. Leaving: process_output_results
-...Trace. Leaving: process_output
       c 
       stop
  Program Terminated by user 

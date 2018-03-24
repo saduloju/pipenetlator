@@ -88,12 +88,10 @@ do
 	  }
    if ( matchs( "output", 4))
       {
-		  debug=true;
 	   process_output(node_table, lengths, diameters, hw_coeffs,external_flows,
                       initial_heads,final_heads,flow_rates,residuals,num_pipes,
 					  num_nodes, reservoir_node, reservoir_head,tol, iter, 
 					  title,iter_limit,data_fail,resolve,output_reslt, debug);
-					  debug=false;
 	   iter_limit=false; new_read = true;continue;
 	  }
    if ( matchs( "debug" , 5))
