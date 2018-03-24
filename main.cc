@@ -20,7 +20,7 @@ const Real max_tol=10, min_tol=0.0001;
 int i,j, counte=0, num_pipes, num_nodes, reservoir_node, iter, new_read; 
 Real reservoir_head, tol; 
 bool debug = false, resolve = false,output_reslt = false,iter_limit = false;
-bool link_fail = false ;
+bool data_fail = false ;
 array <int> node_table;
 vector<Real> lengths, diameters, external_flows,initial_heads,final_heads;
 vector<Real> hw_coeffs, residuals, flow_rates;
@@ -83,15 +83,17 @@ do
 	   process_solve(node_table, lengths, diameters, hw_coeffs,external_flows,
                      initial_heads,final_heads,residuals, flow_rates,num_pipes,
 					 num_nodes, reservoir_node, reservoir_head,tol, iter,title,
-					 iter_limit,link_fail, resolve,output_reslt, debug);
+					 iter_limit,data_fail, resolve,output_reslt, debug);
        resolve = false;	new_read = true; continue;
 	  }
    if ( matchs( "output", 4))
       {
+		  debug=true;
 	   process_output(node_table, lengths, diameters, hw_coeffs,external_flows,
                       initial_heads,final_heads,flow_rates,residuals,num_pipes,
 					  num_nodes, reservoir_node, reservoir_head,tol, iter, 
-					  title,iter_limit,link_fail,resolve,output_reslt, debug);
+					  title,iter_limit,data_fail,resolve,output_reslt, debug);
+					  debug=false;
 	   iter_limit=false; new_read = true;continue;
 	  }
    if ( matchs( "debug" , 5))

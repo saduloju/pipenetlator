@@ -15,7 +15,7 @@
 //
 //extern ifstream data_file;
 
-void user_messages(int mess_num)
+void user_mess(int mess_num)
 {
 switch( mess_num ) 
  { 
@@ -58,8 +58,35 @@ switch( mess_num )
      cout << ">>>No new solution from solve command\n";
 	 cout << ">>>...No need to output result \n";
      break;
-   default:
-     cout << " invalid message number..../n please crosscheck...\n";
+   case 10:
+     cout << ">>> There was error in input data, solution not computed\n";
+	 cout << ">>>...No solution to output\n";
+     break;
+   case 12:
+     cout << ">>> There is in an error in the length of pipe: ";
+     break;
+   case 13:
+     cout << ">>> There is in an error in the dimeter of pipe: ";
+     break;
+   case 14:
+     cout << ">>> There is in an error in the hw_coeff. of pipe: ";
+     break;
+   case 15:
+     cout << ">>> There is in an error in the initial head: ";
+     break;
+   case 16:
+     cout << ">>> CHECK! A node need to connected to pipe: ";
+     break;
+   case 17:
+     cout << ">>> CHECK! Reservoir head not stored!";
+	 cout << "...solution can not be provided\ ";
+     break;
+   case 22:
+	 cout << "...solution can not be provided\ ";
+     break;
+	 default:
+     cout <<">>> invalid message number....\n";
+     cout <<	" please crosscheck...\n";
      break;
  }
 return ;

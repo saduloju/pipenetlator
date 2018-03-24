@@ -18,7 +18,7 @@ void process_output(array <int> &node_table, vector<Real> &lengths,vector<Real> 
                     vector<Real> &hw_coeffs,vector<Real> &external_flows, vector<Real> &initial_heads, 
 					vector<Real> &final_heads, vector<Real> &flow_rates, vector<Real> &residuals,
 					int &num_pipes,int &num_nodes,int &reservoir_node, Real &reservoir_head,
-					Real &tol, int iter, string &title,bool &iter_limit,bool &link_fail,
+					Real &tol, int iter, string &title,bool &iter_limit,bool &data_fail,
 					bool &resolve, bool &output_reslt, bool &debug)
 {
  if (debug){user_trace( 1, "process_output");}
@@ -33,9 +33,9 @@ void process_output(array <int> &node_table, vector<Real> &lengths,vector<Real> 
      }
    else if( matchs( "results", 4))
      {   
-	  if(iter_limit){ user_messages(1); return;}	
-	  if(link_fail) { user_messages(3); return;}
-	  if(!output_reslt){ user_messages(9); return;}
+	  if(iter_limit){ user_mess(1); return;}	
+	  else if(data_fail) { user_mess(10); return;}
+	  if(!output_reslt){ user_mess(9); return;}
 	  if(output_reslt)
 	    { process_output_results(final_heads,flow_rates, residuals, num_nodes,
                                 num_pipes, resolve,debug);

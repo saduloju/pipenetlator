@@ -15,6 +15,7 @@ bool linkup(  int num_branches, int num_nodes, bool debug,
   int node_id, branch_id, first, pos_node, neg_node;
   vector<int> kount;
   string text="The Folowing Nodes are Not Connected to Any Branch";
+if(debug){user_trace( 1, "linkup");}
 //
 //             create, zero then build the vector to store the number
 //             of branches attached to each node
@@ -34,10 +35,11 @@ bool linkup(  int num_branches, int num_nodes, bool debug,
 //             message and quit if this of branches attached to each node
 //
   first = true;
+//  kount(2)=0;//////////////////////////////////////////////////////////////
   for( node_id=1; node_id<=num_nodes; node_id++ )
     {
       if ( kount(node_id) != 0 ) continue;
-      if ( first ) { cout << endl << text << endl;}
+      if ( first ) { cout << endl << text << endl; return (false);}
       cout << setw(10) << node_id << endl;
       first = false;
 	  local_error = true;
@@ -67,6 +69,8 @@ bool linkup(  int num_branches, int num_nodes, bool debug,
 //
 //             all done. free the temporary kount vector and leave
 //
+if(debug){user_trace( 2, "linkup");}
+
   kount.free(); return( true );
 //
 }
