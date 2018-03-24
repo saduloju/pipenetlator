@@ -1,23 +1,22 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_solve function                             *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "system.h"
 #include "prototypes.h"
 // This function performs Newton iteration to solve the Steady State Pressurized 
-//Pipe flow Analysis
+// Pipe flow analysis
 //
 void process_solve(array <int> &node_table, vector<Real> &lengths,
                     vector<Real> &diameters, vector<Real> &hw_coeffs,
 					vector<Real> &external_flows, vector<Real> &initial_heads, 
-					vector<Real> &final_heads, vector<Real> &residuals,vector<Real> &flow_rates,
-					int &num_pipes, int &num_nodes,int &reservoir_node, Real &reservoir_head,
-					Real &tol, int &iter, string &title,bool &iter_limit, bool &link_fail,
+					vector<Real> &final_heads, vector<Real> &residuals,
+					vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
+					int &reservoir_node, Real &reservoir_head,Real &tol,
+					int &iter, string &title,bool &iter_limit, bool &link_fail,
 					bool &resolve, bool &output_reslt, bool &debug)
 {
 

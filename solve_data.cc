@@ -11,11 +11,11 @@
 #include "prototypes.h"
 
 void process_solve_data(array <int> &node_table, vector<Real> &lengths,
-                        vector<Real> &diameters, vector<Real> &hw_coeffs,
-					    vector<Real> &external_flows, vector<Real> &initial_heads, 
-					    vector <Real> &residuals, vector <Real> &frictn_ress,int &num_pipes, 
-					    int &num_nodes,int &reservoir_node, Real &reservoir_head,
-					    Real &maxr, string &title,bool &link_fail, bool &debug)					
+         vector<Real> &diameters, vector<Real> &hw_coeffs,
+		 vector<Real> &external_flows,vector<Real> &initial_heads,
+		 vector <Real> &residuals,vector <Real> &frictn_ress,int &num_pipes, 
+		 int &num_nodes,int &reservoir_node, Real &reservoir_head,Real &maxr,
+		 string &title,bool &link_fail, bool &debug)					
 {
 int i,j;
 vector<int> ipt;
@@ -45,7 +45,7 @@ J.create(1,num_nodes,1,num_nodes);
 
  if(debug)
   {
-  // print the incid_indexes (IPT), nodal incidences, branches attached to nodes
+  //Prints the incid_indexes(IPT),nodal incidences,branches attached to nodes
   
    cout << "\n incid_indexes"<< endl;
    for( i=1; i<= num_nodes+1; i++){cout <<setw(6)<< ipt(i) << endl;}
@@ -77,7 +77,7 @@ J.create(1,num_nodes,1,num_nodes);
  /////////////////////////////////////////////////////////
  
  linear_solver( J, x,residualsneg,num_nodes,debug ); 
- /////////////////////////////////////////////////////////////////////////////////////
+
 
  for(i=1; i<=num_nodes; i++){initial_heads(i) += x(i);}
  

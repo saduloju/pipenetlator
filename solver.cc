@@ -23,7 +23,7 @@ int linear_solver( array<double> &a, vector<double> &x,
  *        x       -- vector to receive computed solution            *
  *        b       -- vector containing the right hand side          *
  *        neqns   -- (integer) number of linear equations           *
- *        debug   -- (bool) debug flag set by calling routine    *
+ *        debug   -- (bool) debug flag set by calling routine       *
  *                                                                  *
  ********************************************************************/
 

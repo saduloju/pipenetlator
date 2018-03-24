@@ -17,7 +17,7 @@ void compute_j(array <int> &node_table, array <Real> &J,vector <Real> &beta,
 {
 
 int i,j,pipe,first_link_pos,last_link_pos,sign,start, end;
-double a=0.54, powe_hw, powe_heads;
+double a=0.54, powe_hw, powe_heads,head_diff;
 
 
 if (debug){user_trace( 1, "compute_j");}
@@ -26,13 +26,14 @@ if (debug){user_trace( 1, "compute_j");}
  last_link_pos =  ipt (node+1)-1;	
  for(i=first_link_pos; i<=last_link_pos; i++)
 	{
-	  pipe= link(i);
-	  sign = pipe/abs(pipe);
-	  pipe = abs(pipe);
+	  pipe = link(i);
+	  sign = 1;
+	  if(pipe < 0){pipe=-pipe;sign=-1;}
 	  start= node_table(pipe,1);
 	  end= node_table(pipe,2);
 	  powe_hw=pow(hw_coeffs(pipe),1.852)*pow(diameters(pipe),4.87);
-	  powe_heads=pow((abs(initial_heads(start)-initial_heads(end))/frictn_ress(pipe)),(a-1));
+	  head_diff= initial_heads(start)-initial_heads(end);
+	  powe_heads=pow((abs(head_diff)/frictn_ress(pipe)),(a-1));
       frictn_ress(pipe) = (8.52e5 * lengths(pipe))/ powe_hw;
       beta(pipe)=(a/frictn_ress(pipe))* powe_heads ;
 	  if(sign>0)

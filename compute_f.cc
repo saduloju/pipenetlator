@@ -32,8 +32,8 @@ if(debug){user_trace( 1, "compute_f");}
  for(i=first_link_pos; i<=last_link_pos; i++)
 	{
 	 pipe= link(i);
-	 sign = pipe/abs(pipe);
-	 pipe = abs(pipe);
+	 sign = 1;
+	 if(pipe < 0){pipe=-pipe;sign=-1;}
 	 start= node_table(pipe,1);
 	 end= node_table(pipe,2);
      frictn_ress(pipe) = (8.52e5 * lengths(pipe))/ (pow(hw_coeffs(pipe),1.852)*pow(diameters(pipe),4.87));

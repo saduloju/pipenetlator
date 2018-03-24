@@ -12,10 +12,10 @@
 #include "prototypes.h"
 
 void compute_flows(array <int> &node_table, vector<Real> &lengths,
-                    vector<Real> &diameters, vector<Real> &hw_coeffs,
-					vector<Real> &external_flows, vector<Real> &final_heads, 
-					vector<Real> &flow_rates,vector <Real> &frictn_ress,int &num_pipes, int &num_nodes,
-					int &reservoir_node, Real &reservoir_head,Real &maxr, string &title, bool &debug)
+                   vector<Real> &diameters, vector<Real> &hw_coeffs,
+				   vector<Real> &external_flows, vector<Real> &final_heads, 
+				   vector<Real> &flow_rates,vector <Real> &frictn_ress,int &num_pipes, int &num_nodes,
+				   int &reservoir_node, Real &reservoir_head,Real &maxr, string &title, bool &debug)
 {
  int pipe, start, end;
  double a=0.54;
