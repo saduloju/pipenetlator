@@ -9,7 +9,7 @@ OBJECTS = scan.o  main.o user_messages.o error_messages.o trace.o read_project.o
           process_number.o create_vectors.o vectors_free.o process_reservoir.o parameters.o \
           properties.o external.o initial_heads.o convergence.o linkup.o \
 		  iterations.o output.o output_data.o output_results.o process_solve.o\
-		  solution_status.o solve_data.o compute_fvec.o compute_f.cc compute_Jmat.o compute_j.o\
+		  data_check.o solution_status.o solve_data.o compute_fvec.o compute_f.cc compute_Jmat.o compute_j.o\
 		  solver.o compute_flows.o
 #
 project1 : ${OBJECTS}
@@ -36,6 +36,7 @@ output.o: output.cc prototypes.h system.h arrays.h scanlib.h
 output_data.o: output_data.cc prototypes.h system.h arrays.h scanlib.h 
 output_results.o: output_results.cc prototypes.h system.h arrays.h scanlib.h 
 process_solve.o: process_solve.cc prototypes.h system.h arrays.h scanlib.h
+data_check.o: data_check.cc prototypes.h system.h arrays.h scanlib.h
 solution_status.o: solution_status.cc prototypes.h system.h arrays.h scanlib.h
 solve_data.o: solve_data.cc prototypes.h system.h arrays.h scanlib.h
 linkup.o: linkup.cc prototypes.h system.h arrays.h scanlib.h 

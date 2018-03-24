@@ -21,7 +21,7 @@ void process_output_results(vector<Real> &final_heads,vector<Real> &flow_rates,
  
 int i;
 
-if (resolve){ user_messages(6); return;}
+if (resolve){ user_mess(6); return;}
 
 cout<< endl;
 cout << "***********************************************************\n";

@@ -76,10 +76,10 @@ switch( err_num )
      cout << ">>> ERROR: pipe number {"<< title <<"} > no of pipes!\n";
      break;
    case 17:
-     cout<< ">>> ERROR: node no {"<< title <<"} greater than total nodes!\n"; 
+     cout << ">>> ERROR: node no {"<< title <<"} greater than total nodes!\n"; 
      break;
    case 18:
-     cout<< ">>> ERROR: start node no {"<< title <<"} greater than no of nodes!\n"; 
+     cout << ">>> ERROR: start node no {"<< title <<"} greater than no of nodes!\n"; 
      break;
    case 19:
      cout<< ">>> ERROR: end node no {"<< title <<"} greater than no of nodes!\n"; 
@@ -182,7 +182,7 @@ switch( err_num )
    cout<< ">>> ERROR: work on it later {"<< title <<"} is not a double!\n"; 
      break;
    default:
-     cout << " invalid message number..../n please crosscheck...\n";
+     cout << ">>> invalid eror message number..../n please crosscheck...\n";
      break;
  }
 return ;
