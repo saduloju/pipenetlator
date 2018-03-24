@@ -28,13 +28,13 @@ void process_output_data(array <int> &node_table, vector<Real> &lengths,
 
  int i;
 
-cout << "***************************************************************** "<< endl;
-cout << "*                                                               *" << endl;
-cout << "*        Steady State Pressurized Pipe flow Analysis            *" << endl;
-cout << "*                                                               *" << endl;
-cout << "*           -- Tabular Listing of Network Data --               *" << endl;
-cout << "*                                                               *" << endl;
-cout << "*****************************************************************" << endl;      
+cout << "*****************************************************************\n";
+cout << "*                                                               *\n";
+cout << "*        Steady State Pressurized Pipe flow Analysis            *\n";
+cout << "*                                                               *\n";
+cout << "*           -- Tabular Listing of Network Data --               *\n";
+cout << "*                                                               *\n";
+cout << "*****************************************************************\n";      
 
  
 cout <<"Project: "<< title<< endl<< endl;

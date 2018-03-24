@@ -3,7 +3,7 @@
 //*                                                                         *
 //*             function : error_message                                    *
 //*             Author : Sunday Aduloju                                     *
-//*             Last Modified: 3/22/2018                                     *
+//*             Last Modified: 3/22/2018                                    *
 //*             This function calls out messages                            *
 //*                                                                         *
 //***************************************************************************

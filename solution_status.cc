@@ -20,7 +20,8 @@ void solution_status( Real & maxr, int &kont, bool &debug)
 if(debug){user_trace( 1, "solution_status");}
 
 cout << "Iteration number = " << kont<< endl;  
-cout << "The maximum residual flow = "	<< maxr << endl;
+cout << "The maximum residual flow = ";
+cout <<setiosflags(ios::fixed)<< setprecision(3)<< maxr << endl;
 
 if(debug){user_trace( 2, "solution_status");}	
 return;

@@ -30,32 +30,33 @@ switch( mess_num )
 	 cout << " Results is invalid because the solution failed to converge!\n";
 	 break;
    case 2 :
-     cout << ">>>CHECK! Some nodes are connected to pipes " << flush;
+     cout << ">>>CHECK! pipe(s) connected to node(s) is missing \n";
+	 cout << ">>>....check earlier error message(s) while translating data\n";
      break;
    case 3:
-     cout << " No modification to existing data!\n" ;
-     cout << " ....The earlier solution is still valid\n" ;
+     cout << ">>> There is no modification to existing data!\n" ;
+     cout << ">>> ....The earlier solution is still valid\n" ;
      break;
    case 4:
-     cout << "....Failed to converge for the set iteration !" << endl ;
+     cout << ">>>....Solution failed to converge for the set iteration !\n";
      break;
    case 5:
-     cout<< "Solution is successful!" << endl; 
+     cout<< ">>> Non linear solution converged!\n"; 
      break;
    case 6:
-     cout<< ">>> ChECK! Results not yet available !" << endl; 
-	 cout<< ">>> please include solve command before output result !" << endl; 
+     cout<< ">>>CHECK! Results not yet available !\n"; 
+	 cout<< ">>>...please include solve command before output result !\n"; 
      break;
    case 7:
-     cout << "\nSolution Status:"<< endl;
+     cout << "\nSolution Status:\n";
      cout << "---------------\n";
      break;
    case 8:
      cout << "\n";
      break;
    case 9:
-     cout << "No new solution from solve command\n";
-	 cout << "No need to output result \n";
+     cout << ">>>No new solution from solve command\n";
+	 cout << ">>>...No need to output result \n";
      break;
    default:
      cout << " invalid message number..../n please crosscheck...\n";
