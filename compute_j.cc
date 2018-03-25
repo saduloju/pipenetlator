@@ -21,7 +21,14 @@ void compute_j(array <int> &node_table, array <Real> &J,vector <Real> &beta,
 
 int i,j,pipe,first_link_pos,last_link_pos,sign,start, end;
 double a=0.54, powe_hw, powe_heads,head_diff;
-
+//                     Parameters
+// link:       contains all pipes in node 1 first followed by node 2, etc.
+// ipt:        used to access the starting postion of link for the list of 
+//             branches attached to certain node
+// Node_table: defines the nodes connected to pipe and direction
+// start:    For a given pipe,the node from which water flow start from
+// end:      For a given pipe,the node from which water flow flow to
+// frictn_ress:stores friction resistance to flow in pipes
 
 if (debug){user_trace( 1, "compute_j");}
 

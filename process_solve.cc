@@ -22,7 +22,6 @@ void process_solve(array <int> &node_table, vector<Real> &lengths,
 				   const int max_iter,bool &iter_limit, bool &data_fail,
 				   bool &resolve, bool &output_reslt, bool &debug)
 {
-//Real maxr;
 int i, kont;
 bool check_link= true,check_data=false;
 vector<int> ipt,link;
@@ -37,7 +36,7 @@ link.create(1,2*num_pipes);
 // check_link: checks if the pipes are properly connected to
 // outplt:     control output results function to print result.
 // link:       contains all pipes in node 1 first followed by node 2, etc.
-// ipt:        used to access the starting postion of link for the lis of 
+// ipt:        used to access the starting postion of link for the list of 
 //             branches attached to certain nodes
 // maxr:       Maximum residual 
 // check_data: checks all other data required to solve are present/correct

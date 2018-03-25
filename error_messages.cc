@@ -11,7 +11,7 @@
 #include "header.h"
 #include "prototypes.h"
 //
-//
+//The function prints error message when the user provide wrong input data
 //
 //
 
