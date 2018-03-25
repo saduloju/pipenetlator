@@ -17,7 +17,7 @@
 void read_project(array <int> &node_table, vector<Real> &lengths, 
                   vector<Real> &diameters, vector<Real> &hw_coeffs, 
 				  vector<Real> &external_flows, vector<Real> &initial_heads,
-				  int &counte,Real &tol,int iter, string &title, bool &debug)
+				  int &counte,Real &tol,int &iter, string &title, bool &debug)
 {
 
 int nchar_in_string;

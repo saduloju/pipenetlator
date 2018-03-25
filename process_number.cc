@@ -26,8 +26,8 @@ while( ! endcrd ())
    matchs( "of", 2 );
    if( matchs( "nodes", 4))
 	 {
-	  if( ! integr(num_nodes)){ error_message(3); continue;}
-	  if( num_nodes > max_nodes){ error_message(4); num_nodes = max_nodes; continue;}
+	  if( ! integr(num_nodes)){ error_message(3);num_nodes=max_nodes;continue;}
+	  if(num_nodes > max_nodes){error_message(4);num_nodes=max_nodes; continue;}
 	  if( num_nodes < 0){ error_message(5); istrue(); return;}
 	  external_flows.create(1, num_nodes);
       initial_heads.create(1, num_nodes);

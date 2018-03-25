@@ -1,7 +1,4 @@
-
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_output_results function                    *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -11,11 +8,12 @@
 #include "header.h"
 #include "prototypes.h"
 //
-//This function prints results but the function is not implement yet
+//This function prints results
 //
 void process_output_results(vector<Real> &final_heads,vector<Real> &flow_rates, 
                             vector<Real> &residuals,Real &maxr,int &num_nodes,
-                            int &num_pipes,bool &resolve, bool &debug)
+                            int &num_pipes,string &title,bool &resolve,
+							bool &debug)
 {
  if (debug){user_trace( 1, "process_output_results");}	
  
@@ -32,6 +30,8 @@ cout << "*           -- computed Network Solutions --              *\n";
 cout << "*                                                         *\n";
 cout << "***********************************************************\n";
  
+cout <<"Project: "<< title<< endl<< endl;
+
 cout <<"Water flow rates in pipes\n";
 cout << "-------------------------\n";
 cout << setw(3)  << "pipe";

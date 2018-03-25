@@ -26,6 +26,8 @@ int i, pipe,first_link_pos,last_link_pos,sign,start, end;
 Real a=0.54, F, pow_pties; 
 //                     Parameters
 // link:       contains all pipes in node 1 first followed by node 2, etc.
+// ipt:        used to access the starting postion of link for the list of 
+//             branches attached to certain node
 // Node_table: defines the nodes connected to pipe and direction
 // start:    For a given pipe,the node from which water flow start from
 // end:      For a given pipe,the node from which water flow flow to

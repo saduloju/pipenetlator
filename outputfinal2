@@ -1,0 +1,16 @@
+      c 
+      c 
+      project 'Small test network'
+      number of pipes 3 nodes 3.90
+>>> ERROR: no of nodes { 3.90} is not integer!
+>>> ERROR: wrong command { 3.90}
+      reservoir at node 1 head 100
+      pipe properties
+       diameter 10 hazen_williams coefficient 120 length 1000
+          1 1 2
+       diameter 12
+          2 2 3
+       diameter 10 length 1500
+          3 1 3
+      external nodal flows
+       2 1.5

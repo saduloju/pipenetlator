@@ -1,18 +1,13 @@
-
-
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
-//*             function : process_output_data function                       *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
 #include "prototypes.h"
 //
-//
+// provides the solution status of the Newton iterations
 //
 //
 void solution_status( Real & maxr, int &kont, bool &debug)

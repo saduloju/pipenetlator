@@ -1,21 +1,18 @@
- 
-//*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
+ //*****************************************************************************
 //*             function : process_output_data function                       *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
 #include "prototypes.h"
 //
-//This function prints the input
+//This function prints the input data
 // this consists of the pipe dimensions and hazen williams coefficient
 // the external flows and the heads are also printed
 // Lastly it prints the tolerance and maximum iterations 
-//specified by the user
+// specified by the user
 //
 
 void process_output_data(array <int> &node_table, vector<Real> &lengths,
@@ -45,7 +42,7 @@ cout <<"Reservoir Node: "<< reservoir_node;
 cout<< setw(18)<< " Reservoir head: ";
 cout << setiosflags(ios::fixed) << setprecision(3) << reservoir_head << endl;
  
- //
+//
 // output Pipe properties
 //
  
