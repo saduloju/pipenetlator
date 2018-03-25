@@ -8,7 +8,7 @@
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 //This function stores the initial heads at each nodes  

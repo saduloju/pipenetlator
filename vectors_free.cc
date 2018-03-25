@@ -7,7 +7,7 @@
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 
 void vectors_free(vector<Real> &final_heads,vector<Real> &residuals,

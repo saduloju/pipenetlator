@@ -8,7 +8,7 @@
 //*                                                                         *
 //***************************************************************************
 //
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 //
@@ -175,9 +175,6 @@ switch( err_num )
    case 54:
      cout << ">>>ERRoR: unknown  {"<< title <<"} output keyword ";
      break;		 
-   case 55:
-     cout << ">>>just checking stuff  {"<< title <<"} delete later";
-     break;	
 	 case 60:
    cout<< ">>> ERROR: work on it later {"<< title <<"} is not a double!\n"; 
      break;

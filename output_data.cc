@@ -8,7 +8,7 @@
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 //This function prints the input
@@ -21,8 +21,9 @@
 void process_output_data(array <int> &node_table, vector<Real> &lengths,
                          vector<Real> &diameters, vector<Real> &hw_coeffs,
 					     vector<Real> &external_flows, vector<Real> &initial_heads,
-					     int &num_pipes, int &num_nodes,int reservoir_node, int reservoir_head,
-					     Real &tol, int iter, string &title, bool &debug)
+					     int &num_pipes, int &num_nodes,int reservoir_node,
+						 int reservoir_head,Real &tol, int iter, string &title,
+						 bool &debug)
 {
  if (debug){user_trace( 1, "process_output_data");}
 

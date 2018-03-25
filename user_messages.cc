@@ -8,7 +8,7 @@
 //*                                                                         *
 //***************************************************************************
 //
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 // global variables
@@ -81,9 +81,18 @@ switch( mess_num )
      cout << ">>> CHECK! Reservoir head not stored!";
 	 cout << "...solution can not be provided\ ";
      break;
-   case 22:
-	 cout << "...solution can not be provided\ ";
+   case 18:
+	 cout << ">>>The tol used is the max permiss value of:";
      break;
+   case 19:
+	 cout << ">>>The tol used is the min permiss value of:";
+     break;
+   case 20:
+	 cout << ">>>The iter used is the max permiss value of:";
+     break;
+	 case 22:
+	 cout << "...solution can not be provided\ ";
+     break;	 
 	 default:
      cout <<">>> invalid message number....\n";
      cout <<	" please crosscheck...\n";

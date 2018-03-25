@@ -47,22 +47,23 @@ void process_convergence( Real &tol, const Real min_tol, const Real max_tol,
 void process_iterations(int &iter, const int min_iter, const int max_iter, bool &resolve,
                          bool &debug);
 void process_solve(array <int> &node_table, vector<Real> &lengths,
-                    vector<Real> &diameters, vector<Real> &hw_coeffs,
-					vector<Real> &external_flows, vector<Real> &initial_heads, 
-					vector<Real> &final_heads, vector<Real> &residuals,
-					vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
-					int &reservoir_node, Real &reservoir_head,Real &tol,
-					int &iter, string &title,bool &iter_limit, bool &data_fail,
-					bool &resolve, bool &output_reslt, bool &debug);
+                   vector<Real> &diameters, vector<Real> &hw_coeffs,
+				   vector<Real> &external_flows, vector<Real> &initial_heads, 
+				   vector<Real> &final_heads, vector<Real> &residuals,
+				   vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
+				   int &reservoir_node, Real &reservoir_head,Real &maxr,
+				   Real &tol,const Real min_tol, const Real max_tol,int &iter,
+				   const int max_iter,bool &iter_limit, bool &data_fail,
+				   bool &resolve, bool &output_reslt, bool &debug);
 					
 bool data_check(array <int> &node_table, vector<Real> &lengths,
-                    vector<Real> &diameters, vector<Real> &hw_coeffs,
-					vector<Real> &external_flows, vector<Real> &initial_heads, 
-					vector<Real> &final_heads, vector<Real> &residuals,
-					vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
-					int &reservoir_node, Real &reservoir_head,Real &tol,
-					int &iter, string &title,bool &iter_limit, bool &data_fail,
-					bool &resolve, bool &output_reslt, bool &debug);
+                   vector<Real> &diameters, vector<Real> &hw_coeffs,
+				   vector<Real> &external_flows, vector<Real> &initial_heads, 
+				   vector<Real> &final_heads, vector<Real> &residuals,
+				   vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
+				   int &reservoir_node, Real &reservoir_head,Real &tol,
+				   const Real min_tol,const Real max_tol, int &iter,
+  				   const int max_iter,bool &debug);
 					
 void solution_status( Real & maxr, int &kont, bool &debug);	
 				
@@ -71,7 +72,7 @@ void process_solve_data(array <int> &node_table, vector<Real> &lengths,
 		 vector<Real> &external_flows,vector<Real> &initial_heads,
 		 vector <Real> &residuals,vector <Real> &frictn_ress,vector<int> &ipt,
 		 vector<int> &link, int &num_pipes,int &num_nodes,int &reservoir_node,
-		 Real &reservoir_head,Real &maxr,string &title,bool &debug);
+		 Real &reservoir_head,Real &maxr,bool &debug);
 					
 void compute_fvec(array <int> &node_table, vector<Real> &lengths,vector<Real> &diameters, vector<Real> &hw_coeffs,
                vector<Real> &initial_heads,vector<Real> &external_flows,vector<Real> & frictn_ress,vector <Real> &residuals,
@@ -98,10 +99,11 @@ int linear_solver( array<double> &a, vector<double> &x,
 					 
 
 void compute_flows(array <int> &node_table, vector<Real> &lengths,
-                    vector<Real> &diameters, vector<Real> &hw_coeffs,
-					vector<Real> &external_flows, vector<Real> &final_heads, 
-					vector<Real> &flow_rates,vector <Real> &frictn_ress,int &num_pipes, int &num_nodes,
-					int &reservoir_node, Real &reservoir_head,Real &maxr, string &title, bool &debug);					 
+                   vector<Real> &diameters, vector<Real> &hw_coeffs,
+				   vector<Real> &external_flows, vector<Real> &final_heads, 
+				   vector<Real> &flow_rates,vector <Real> &frictn_ress,
+				   int &num_pipes, int &num_nodes,int &reservoir_node, 
+				   Real &reservoir_head,Real &maxr, bool &debug);					 
 bool linkup(int num_branches, int num_nodes, bool debug,array<int> &node,vector<int> &ipt,
                     vector<int> &link );
 			  
@@ -109,7 +111,7 @@ void process_output(array <int> &node_table, vector<Real> &lengths,vector<Real> 
                     vector<Real> &hw_coeffs,vector<Real> &external_flows, vector<Real> &initial_heads, 
 					vector<Real> &final_heads, vector<Real> &flow_rates, vector<Real> &residuals,
 					int &num_pipes,int &num_nodes,int &reservoir_node, Real &reservoir_head,
-					Real &tol, int iter, string &title,bool &iter_limit,bool &data_fail,
+					Real &tol, int iter, Real &maxr, string &title, bool &iter_limit,bool &data_fail,
 					bool &resolve, bool &output_reslt, bool &debug);
 void process_output_data(array <int> &node_table, vector<Real> &lengths,
                          vector<Real> &diameters, vector<Real> &hw_coeffs,
@@ -118,7 +120,7 @@ void process_output_data(array <int> &node_table, vector<Real> &lengths,
 					     Real &tol, int iter, string &title, bool &debug);
 
 void process_output_results(vector<Real> &final_heads,vector<Real> &flow_rates, 
-                            vector<Real> &residuals,int &num_nodes,
+                            vector<Real> &residuals,Real &maxr,int &num_nodes,
                             int &num_pipes,bool &resolve, bool &debug);
 							
 void vectors_free(vector<Real> &final_heads,vector<Real> &residuals,

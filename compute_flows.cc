@@ -1,25 +1,29 @@
-
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
-//*             function : process_solve function                             *
+//*             function : compute_flows function                             *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
-
+//
+// The function computes the flow rates when the final heads are provided
+//
 void compute_flows(array <int> &node_table, vector<Real> &lengths,
                    vector<Real> &diameters, vector<Real> &hw_coeffs,
 				   vector<Real> &external_flows, vector<Real> &final_heads, 
-				   vector<Real> &flow_rates,vector <Real> &frictn_ress,int &num_pipes, int &num_nodes,
-				   int &reservoir_node, Real &reservoir_head,Real &maxr, string &title, bool &debug)
+				   vector<Real> &flow_rates,vector <Real> &frictn_ress,
+				   int &num_pipes, int &num_nodes,int &reservoir_node, 
+				   Real &reservoir_head,Real &maxr, bool &debug)
 {
  int pipe, start, end;
- double a=0.54;
- 
+ Real a=0.54, head_diff;
+//                     Parameters
+// start:     For a given pipe,the node from which water flow start from
+// end:       For a given pipe,the node from which water flow flow to
+// head_diff: Difference between final heads of the pipes
+// frictn_ress:Stores friction resistance to flow in pipes
  if (debug){user_trace( 1, "compute_flows");}	
   
  for( pipe=1; pipe<=num_pipes; pipe++)
@@ -28,11 +32,13 @@ void compute_flows(array <int> &node_table, vector<Real> &lengths,
    end = node_table(pipe,2);
    if( final_heads(start) >= final_heads(end))
      { 
-      flow_rates(pipe)=  pow( ((final_heads(start)-final_heads(end))/frictn_ress(pipe)), a);
+      head_diff= final_heads(start)-final_heads(end);
+      flow_rates(pipe)=  pow( ((head_diff)/frictn_ress(pipe)), a);
 	 }
    else 
 	 { 
-       flow_rates(pipe)= -pow( ((final_heads(end)-final_heads(start))/frictn_ress(pipe)), a);
+       head_diff=final_heads(end)-final_heads(start);
+       flow_rates(pipe)= -pow( ((head_diff)/frictn_ress(pipe)), a);
 	 }
   }
  

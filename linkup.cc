@@ -1,11 +1,17 @@
-
-#include "system.h"
+//*****************************************************************************
+//*             function : linkup function                                    *
+//*             Author : Prof. Dodds                                          *
+//*             Modified by: Sunday Aduloju                                   *                    
+//*             Last Modified: 3/25/2018                                      *
+//*****************************************************************************
+#include "header.h"
 #include "prototypes.h"
 //
-//
+//             create, zero then build the vector to store the number
+//             of branches attached to each node
 //
 
-bool linkup(  int num_branches, int num_nodes, bool debug,
+bool linkup( int num_branches, int num_nodes, bool debug,
               array<int> &node,vector<int> &ipt, vector<int> &link )
 {
 //
@@ -15,10 +21,9 @@ bool linkup(  int num_branches, int num_nodes, bool debug,
   int node_id, branch_id, first, pos_node, neg_node;
   vector<int> kount;
   string text="The Folowing Nodes are Not Connected to Any Branch";
-//
-//             create, zero then build the vector to store the number
-//             of branches attached to each node
-//
+
+  if(debug){user_trace( 1, "linkup");}
+  
   kount.create(1,num_nodes);
 //
   for( node_id=1; node_id<=num_nodes; node_id++ ) kount(node_id) = 0;
@@ -67,6 +72,9 @@ bool linkup(  int num_branches, int num_nodes, bool debug,
 //
 //             all done. free the temporary kount vector and leave
 //
-  kount.free(); return( true );
-//
+  kount.free();
+  
+  if(debug){user_trace( 2, "linkup");}
+  
+  return( true );
 }

@@ -1,19 +1,22 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
 //*             project: Input Translator for PipeNetwork Simulator           *
-//*             function : compute_j function                             *
+//*             function : compute_j function                                 *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
+//
+//This funtion computes each row of Jacobian(representing each node)
+//
 					
 void compute_j(array <int> &node_table, array <Real> &J,vector <Real> &beta, 
-                vector<Real> &lengths,vector<Real> &diameters, vector<Real> &hw_coeffs,
-                vector<Real> &initial_heads,vector<Real> &frictn_ress, vector<int> &ipt,
-			    vector<int> &link, int &node, int reservoir_node,int num_nodes,  bool &debug)
+          vector<Real> &lengths,vector<Real> &diameters, vector<Real> &hw_coeffs,
+          vector<Real> &initial_heads,vector<Real> &frictn_ress, vector<int> &ipt,
+		  vector<int> &link, int &node, int reservoir_node,int num_nodes,
+		  bool &debug)
 {
 
 int i,j,pipe,first_link_pos,last_link_pos,sign,start, end;

@@ -6,7 +6,7 @@
 //*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 // The main function calls all the functions  to  read input data,process the 
@@ -16,9 +16,9 @@
 int main()
 {
 const int max_nodes = 2000, max_pipes = 4000, max_iter=300, min_iter=2;; 
-const Real max_tol=10, min_tol=0.0001; 
+const Real max_tol=10.00, min_tol=0.0001; 
 int i,j, counte=0, num_pipes, num_nodes, reservoir_node, iter, new_read; 
-Real reservoir_head, tol; 
+Real reservoir_head, tol, maxr; 
 bool debug = false, resolve = false,output_reslt = false,iter_limit = false;
 bool data_fail = false ;
 array <int> node_table;
@@ -42,8 +42,8 @@ do
    if ( matchs( "number" ,3))
       {
 		process_number( node_table, lengths, diameters, hw_coeffs, external_flows, 
-					   initial_heads, max_pipes, max_nodes,num_pipes, num_nodes, 
-					   resolve,debug);
+					 initial_heads, max_pipes, max_nodes,num_pipes, num_nodes, 
+					 resolve,debug);
 		create_vectors(final_heads,residuals,flow_rates, num_nodes,num_pipes,debug);
         continue;		
 	  }
@@ -55,7 +55,7 @@ do
    if ( matchs( "pipe" , 4))
       {
 	   process_propties(node_table, lengths, diameters, hw_coeffs, num_pipes, 
-						 num_nodes, resolve, debug);
+					 num_nodes, resolve, debug);
 	   new_read = false; continue;
 	  }	 
    if ( matchs( "external" , 4))
@@ -82,18 +82,17 @@ do
       {
 	   process_solve(node_table, lengths, diameters, hw_coeffs,external_flows,
                      initial_heads,final_heads,residuals, flow_rates,num_pipes,
-					 num_nodes, reservoir_node, reservoir_head,tol, iter,title,
-					 iter_limit,data_fail, resolve,output_reslt, debug);
+					 num_nodes, reservoir_node, reservoir_head,maxr,tol, min_tol, 
+					 max_tol, iter,max_iter,iter_limit,data_fail, resolve,
+					 output_reslt, debug);
        resolve = false;	new_read = true; continue;
 	  }
    if ( matchs( "output", 4))
       {
-		  debug=true;
 	   process_output(node_table, lengths, diameters, hw_coeffs,external_flows,
-                      initial_heads,final_heads,flow_rates,residuals,num_pipes,
-					  num_nodes, reservoir_node, reservoir_head,tol, iter, 
-					  title,iter_limit,data_fail,resolve,output_reslt, debug);
-					  debug=false;
+                     initial_heads,final_heads,flow_rates,residuals,num_pipes,
+					 num_nodes, reservoir_node, reservoir_head,tol, iter, maxr, 
+					 title,iter_limit,data_fail,resolve,output_reslt, debug);
 	   iter_limit=false; new_read = true;continue;
 	  }
    if ( matchs( "debug" , 5))

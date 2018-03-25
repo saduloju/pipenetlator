@@ -7,7 +7,7 @@
 //*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 // read the number of nodes and pipes  and initializes the arrays of node table,

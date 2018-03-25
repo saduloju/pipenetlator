@@ -8,7 +8,7 @@
 //*                                                                           *
 //*****************************************************************************
 
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 // reads the reservoir nodes and heads
