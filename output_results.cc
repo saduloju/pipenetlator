@@ -5,16 +5,16 @@
 //*             function : process_output_results function                    *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 //This function prints results but the function is not implement yet
 //
 void process_output_results(vector<Real> &final_heads,vector<Real> &flow_rates, 
-                            vector<Real> &residuals,int &num_nodes,
+                            vector<Real> &residuals,Real &maxr,int &num_nodes,
                             int &num_pipes,bool &resolve, bool &debug)
 {
  if (debug){user_trace( 1, "process_output_results");}	
@@ -23,7 +23,7 @@ int i;
 
 if (resolve){ user_mess(6); return;}
 
-cout<< endl;
+cout << endl;
 cout << "***********************************************************\n";
 cout << "*                                                         *\n";
 cout << "*        Steady State Pressurized Pipe flow Analysis      *\n";
@@ -57,6 +57,8 @@ for( i=1; i<=num_nodes; i++)
 	cout<<setw(19)<<setiosflags(ios::fixed)<< setprecision(1)<<final_heads(i);
 	cout<<setw(25)<<setiosflags(ios::fixed)<< setprecision(3)<<residuals(i)<< endl;
    }
+cout<<"Maximum Residual=";  
+cout<<setw(6)<<setiosflags(ios::fixed)<< setprecision(3)<<maxr<< endl;
 cout<< endl;
  
 if (debug){user_trace( 2, "process_output_results");}	

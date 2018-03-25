@@ -98,6 +98,7 @@ Node           Nodal Heads         Nodal Residual Flows
   1              100.0                    0.000
   2               91.5                    0.000
   3               90.8                   -0.000
+Maximum Residual= 0.000
 
       c 
       c 
@@ -232,6 +233,7 @@ Node           Nodal Heads         Nodal Residual Flows
   5              137.0                    0.000
   6              128.9                   -0.004
   7              129.2                    0.004
+Maximum Residual= 0.004
 
       solve
 >>> There is no modification to existing data!
@@ -328,6 +330,7 @@ Node           Nodal Heads         Nodal Residual Flows
   5              133.9                    0.000
   6              125.9                   -0.000
   7              126.3                    0.000
+Maximum Residual= 0.001
 
       convergence tolerance 0.1
       solve
@@ -371,6 +374,7 @@ Node           Nodal Heads         Nodal Residual Flows
   5              133.9                    0.000
   6              125.9                   -0.000
   7              126.3                    0.000
+Maximum Residual= 0.000
 
       c 
       c 
@@ -646,6 +650,7 @@ Node           Nodal Heads         Nodal Residual Flows
  22              172.3                   -0.000
  23              159.1                   -0.000
  24              155.5                   -0.000
+Maximum Residual= 0.000
 
       c 
       stop

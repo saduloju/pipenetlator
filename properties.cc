@@ -8,7 +8,7 @@
 //*                                                                           *
 //*****************************************************************************
 
-#include "system.h"
+#include "header.h"
 #include "prototypes.h"
 //
 //This function reads the pipe properties  by calling the process_parameter
