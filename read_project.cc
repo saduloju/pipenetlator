@@ -1,6 +1,4 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : read project function                              *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -17,13 +15,13 @@
 void read_project(array <int> &node_table, vector<Real> &lengths, 
                   vector<Real> &diameters, vector<Real> &hw_coeffs, 
 				  vector<Real> &external_flows, vector<Real> &initial_heads,
-				  int &counte,Real &tol,int &iter, string &title, bool &debug)
+				  int &counte,Real &tol,int &iter, string &title, bool debug)
 {
 
 int nchar_in_string;
 title.reserve(80);
 
-if (debug ==true){user_trace( 1, "read_project");}
+if (debug){user_trace( 1, "read_project");}
 
 if(isstring ())
   {
@@ -43,7 +41,7 @@ if( counte > 1)
     iter=0;	
   }
  
-if(debug ==true){user_trace( 2, "read_project");}
+if(debug){user_trace( 2, "read_project");}
 
 return;	 
 }

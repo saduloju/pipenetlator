@@ -19,7 +19,7 @@ bool data_check(array <int> &node_table, vector<Real> &lengths,
 				   vector<Real> &flow_rates,int &num_pipes, int &num_nodes,
 				   int &reservoir_node, Real &reservoir_head,Real &tol,
 				   const Real min_tol,const Real max_tol, int &iter,
-  				   const int max_iter,bool &debug)
+  				   const int max_iter,bool debug)
 				   
 {					
  int i,j;

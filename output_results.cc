@@ -11,9 +11,9 @@
 //This function prints results
 //
 void process_output_results(vector<Real> &final_heads,vector<Real> &flow_rates, 
-                            vector<Real> &residuals,Real &maxr,int &num_nodes,
-                            int &num_pipes,string &title,bool &resolve,
-							bool &debug)
+                            vector<Real> &residuals,Real &maxr,int num_nodes,
+                            int num_pipes,string &title,bool &resolve,
+							bool debug)
 {
  if (debug){user_trace( 1, "process_output_results");}	
  
@@ -41,7 +41,8 @@ cout << setw(23) << "(cfs)\n" ;
 for( i=1; i<=num_nodes; i++)
    {
 	cout<<setw(3)<<i;
-	cout<<setw(19)<<setiosflags(ios::fixed)<< setprecision(1)<<flow_rates(i)<<endl;
+	cout<<setw(19)<<setiosflags(ios::fixed)<< setprecision(1)<<flow_rates(i);
+	cout<<endl;
    }
  
 cout <<"\n\nNodal Pressures and Residual flows\n";
@@ -55,7 +56,8 @@ for( i=1; i<=num_nodes; i++)
    {
 	cout<<setw(3)<<i;
 	cout<<setw(19)<<setiosflags(ios::fixed)<< setprecision(1)<<final_heads(i);
-	cout<<setw(25)<<setiosflags(ios::fixed)<< setprecision(3)<<residuals(i)<< endl;
+	cout<<setw(25)<<setiosflags(ios::fixed)<< setprecision(3)<<residuals(i);
+	cout<< endl;
    }
 cout<<"Maximum Residual=";  
 cout<<setw(6)<<setiosflags(ios::fixed)<< setprecision(3)<<maxr<< endl;

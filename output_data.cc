@@ -1,4 +1,4 @@
- //*****************************************************************************
+ //****************************************************************************
 //*             function : process_output_data function                       *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -14,13 +14,12 @@
 // Lastly it prints the tolerance and maximum iterations 
 // specified by the user
 //
-
 void process_output_data(array <int> &node_table, vector<Real> &lengths,
                          vector<Real> &diameters, vector<Real> &hw_coeffs,
 					     vector<Real> &external_flows, vector<Real> &initial_heads,
-					     int &num_pipes, int &num_nodes,int reservoir_node,
-						 int reservoir_head,Real &tol, int iter, string &title,
-						 bool &debug)
+					     int num_pipes, int num_nodes,int reservoir_node,
+						 int reservoir_head,Real tol, int iter, string &title,
+						 bool debug)
 {
  if (debug){user_trace( 1, "process_output_data");}
 
@@ -65,7 +64,8 @@ cout << setiosflags(ios::fixed) << setprecision(3) << reservoir_head << endl;
 	cout<<setw(3)<<i<<setw(10)<<node_table(i,1)<<setw(10)<<node_table(i,2);
 	cout<<setw(13)<<setiosflags(ios::fixed)<< setprecision(1)<<lengths(i);
 	cout<<setw(10)<<setiosflags(ios::fixed)<< setprecision(1)<< diameters(i);
-	cout<<setw(13)<<setiosflags(ios::fixed)<<setprecision(1)<<hw_coeffs(i)<<endl;
+	cout<<setw(13)<<setiosflags(ios::fixed)<<setprecision(1)<<hw_coeffs(i);
+	cout<<endl;
    }
 //
 // output external flows
@@ -82,7 +82,8 @@ cout << setiosflags(ios::fixed) << setprecision(3) << reservoir_head << endl;
    {
     cout<<setw(3)<<i;
 	cout<<setw(13)<<setiosflags(ios::fixed)<< setprecision(1)<<external_flows(i);
-	cout<<setw(18)<<setiosflags(ios::fixed)<<setprecision(1)<<initial_heads(i)<<endl;	 
+	cout<<setw(18)<<setiosflags(ios::fixed)<<setprecision(1)<<initial_heads(i);
+	cout<<endl;	 
    }
  
  }	

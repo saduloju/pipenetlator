@@ -1,9 +1,15 @@
+//*****************************************************************************
+//*             function : trace function                                     *
+//*             Author : Sunday Aduloju                                       *
+//*             submitted to Prof. Dodds                                      *
+//*             Last Modified: 3/25/2018                                      *
+//*****************************************************************************
+
 #include "header.h"
 #include "prototypes.h"
 //
-// global variables
+// trace entry and exit of functions
 //
-//extern ifstream data_file;
 
 void user_trace(int type, string function_name )
 {

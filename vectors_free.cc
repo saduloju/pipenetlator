@@ -1,17 +1,17 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
-//*             function : vectors_free function                            *
+//*             function : vectors_free function                              *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
 #include "prototypes.h"
-
+//
+// free the vectors arrays created earlier for storing solve command data
+//
 void vectors_free(vector<Real> &final_heads,vector<Real> &residuals,
-                  vector<Real> &flow_rates, bool &debug)
+                  vector<Real> &flow_rates, bool debug)
 {
 	
 if (debug){user_trace( 1, "vectors_free");}	

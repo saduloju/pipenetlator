@@ -1,7 +1,4 @@
-
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_convergence function                       *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -15,7 +12,7 @@
 // and  call an error_messages when there is an error.
 //
 void process_convergence( Real &tol, const Real min_tol, const Real max_tol,
-                         bool &resolve, bool &debug)
+                         bool &resolve, bool debug)
 {
   if (debug){user_trace( 1, "process_convergence");}
   
@@ -24,11 +21,11 @@ void process_convergence( Real &tol, const Real min_tol, const Real max_tol,
   if(tol>max_tol)  {error_message(50);tol= max_tol;}
   if(tol< min_tol) {error_message(51);tol= min_tol;}
  
- resolve=true;
+  resolve=true;
  
- if (debug){user_trace( 2, "process_convergence");}
+  if (debug){user_trace( 2, "process_convergence");}
   
-return;
+ return;
 }
 
  

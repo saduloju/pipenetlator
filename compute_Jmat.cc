@@ -1,6 +1,4 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : compute_jmat function                              *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -17,7 +15,7 @@
 void compute_jmat(array <int> &node_table, array <Real> &J,vector <Real> &beta,
            vector<Real> &lengths,vector<Real> &diameters,vector<Real> &hw_coeffs,
 		   vector<Real> &initial_heads,vector<Real> &frictn_ress,vector<int> &ipt,
-		   vector<int> &link, int reservoir_node,int num_nodes,bool &debug)										
+		   vector<int> &link, int reservoir_node,int num_nodes,bool debug)										
 {
 
 int i,j,node;

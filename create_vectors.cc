@@ -1,6 +1,4 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : create_vectors function                            *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -11,7 +9,7 @@
 #include "prototypes.h"
 void create_vectors(vector<Real> &final_heads, vector<Real> &residuals,
                     vector<Real> &flow_rates , int &num_nodes, int &num_pipes,
-					bool &debug)
+					bool debug)
 {
 	
 if (debug){user_trace( 1, "create_vectors");}	
