@@ -1,11 +1,9 @@
  
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_external function                          *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
@@ -13,8 +11,8 @@
 //
 //This function stores the the external flows into a external_flows vector 
 //
-void process_external( vector<Real> &external_flows, int &num_nodes,bool &resolve,
-                       bool &debug)
+void process_external( vector<Real> &external_flows, int &num_nodes,
+                       bool &resolve,bool debug)
 {
 
 if (debug){user_trace( 1, "process_external");} 
@@ -59,18 +57,3 @@ do{
 
 return;	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

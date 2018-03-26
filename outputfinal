@@ -53,24 +53,16 @@ Newton Iteration Limit:   10
 
       solve
 
-Solution Status:
----------------
-Iteration number = 1
-The maximum residual flow = 3.986
-Iteration number = 2
-The maximum residual flow = 3.778
-Iteration number = 3
-The maximum residual flow = 2.215
-Iteration number = 4
-The maximum residual flow = 2.125
-Iteration number = 5
-The maximum residual flow = 0.817
-Iteration number = 6
-The maximum residual flow = 0.240
-Iteration number = 7
-The maximum residual flow = 0.023
-Iteration number = 8
-The maximum residual flow = 0.000
+              Solution Status:
+--------------------------------------------
+Iter:  1          Max. res.:3.986
+Iter:  2          Max. res.:3.778
+Iter:  3          Max. res.:2.215
+Iter:  4          Max. res.:2.125
+Iter:  5          Max. res.:0.817
+Iter:  6          Max. res.:0.240
+Iter:  7          Max. res.:0.023
+Iter:  8          Max. res.:0.000
 >>> Non linear solution converged!
 
       output results
@@ -186,20 +178,14 @@ Newton Iteration Limit:   20
 >>>...please include solve command before output result !
       solve
 
-Solution Status:
----------------
-Iteration number = 1
-The maximum residual flow = 1.790
-Iteration number = 2
-The maximum residual flow = 0.783
-Iteration number = 3
-The maximum residual flow = 0.356
-Iteration number = 4
-The maximum residual flow = 0.129
-Iteration number = 5
-The maximum residual flow = 0.035
-Iteration number = 6
-The maximum residual flow = 0.004
+              Solution Status:
+--------------------------------------------
+Iter:  1          Max. res.:1.790
+Iter:  2          Max. res.:0.783
+Iter:  3          Max. res.:0.356
+Iter:  4          Max. res.:0.129
+Iter:  5          Max. res.:0.035
+Iter:  6          Max. res.:0.004
 >>> Non linear solution converged!
 
       output results
@@ -251,12 +237,10 @@ Maximum Residual= 0.004
        5 0.6
       solve
 
-Solution Status:
----------------
-Iteration number = 1
-The maximum residual flow = 0.100
-Iteration number = 2
-The maximum residual flow = 0.001
+              Solution Status:
+--------------------------------------------
+Iter:  1          Max. res.:0.100
+Iter:  2          Max. res.:0.001
 >>> Non linear solution converged!
 
       output data results
@@ -341,10 +325,9 @@ Maximum Residual= 0.001
       convergence tolerance 0.1
       solve
 
-Solution Status:
----------------
-Iteration number = 1
-The maximum residual flow = 0.000
+              Solution Status:
+--------------------------------------------
+Iter:  1          Max. res.:0.000
 >>> Non linear solution converged!
 
       output results
@@ -465,42 +448,25 @@ Maximum Residual= 0.000
       maximum newton iterations 40
       solve
 
-Solution Status:
----------------
-Iteration number = 1
-The maximum residual flow = 6.880
-Iteration number = 2
-The maximum residual flow = 4.436
-Iteration number = 3
-The maximum residual flow = 4.825
-Iteration number = 4
-The maximum residual flow = 2.453
-Iteration number = 5
-The maximum residual flow = 2.358
-Iteration number = 6
-The maximum residual flow = 1.526
-Iteration number = 7
-The maximum residual flow = 1.469
-Iteration number = 8
-The maximum residual flow = 1.119
-Iteration number = 9
-The maximum residual flow = 0.786
-Iteration number = 10
-The maximum residual flow = 0.529
-Iteration number = 11
-The maximum residual flow = 0.375
-Iteration number = 12
-The maximum residual flow = 0.230
-Iteration number = 13
-The maximum residual flow = 0.247
-Iteration number = 14
-The maximum residual flow = 0.110
-Iteration number = 15
-The maximum residual flow = 0.050
-Iteration number = 16
-The maximum residual flow = 0.011
-Iteration number = 17
-The maximum residual flow = 0.000
+              Solution Status:
+--------------------------------------------
+Iter:  1          Max. res.:6.880
+Iter:  2          Max. res.:4.436
+Iter:  3          Max. res.:4.825
+Iter:  4          Max. res.:2.453
+Iter:  5          Max. res.:2.358
+Iter:  6          Max. res.:1.526
+Iter:  7          Max. res.:1.469
+Iter:  8          Max. res.:1.119
+Iter:  9          Max. res.:0.786
+Iter: 10          Max. res.:0.529
+Iter: 11          Max. res.:0.375
+Iter: 12          Max. res.:0.230
+Iter: 13          Max. res.:0.247
+Iter: 14          Max. res.:0.110
+Iter: 15          Max. res.:0.050
+Iter: 16          Max. res.:0.011
+Iter: 17          Max. res.:0.000
 >>> Non linear solution converged!
 
       output data results

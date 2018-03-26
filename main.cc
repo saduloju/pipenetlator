@@ -4,7 +4,6 @@
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
 //*             Last Modified: 3/25/2018                                      *
-//*                                                                           *
 //*****************************************************************************
 #include "header.h"
 #include "prototypes.h"
@@ -27,7 +26,6 @@ vector<Real> hw_coeffs, residuals, flow_rates;
 string title;
 
 init_scan ();
-
 new_read = true;
 do
  {	 
@@ -117,4 +115,3 @@ do
  vectors_free(final_heads,residuals,flow_rates,debug);
  return(0);
  }
- 

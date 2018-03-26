@@ -1,11 +1,9 @@
  
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_initial function                           *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
@@ -15,10 +13,10 @@
 //in an "initial_heads" vector
 //
 void process_initial(vector<Real> &initial_heads, int &num_nodes, bool &resolve,
-                     bool &debug)
+                     bool debug)
 {
 	
-if (debug ==true){user_trace( 1, "process_initial");} 	
+if (debug){user_trace( 1, "process_initial");} 	
 	
 int i, node_number;
 matchs( "nodal", 4);
@@ -42,18 +40,18 @@ do{
      }
    else return;
 
-  } while (true);
+  }while (true);
 
   
-  if(debug ==true)
-    {	  
-     cout<< "initial_heads\n";
-     for( i=1; i<=num_nodes; i++){cout <<initial_heads(i)<< endl;}
-	}
+if(debug)
+  {	  
+    cout<< "initial_heads\n";
+    for( i=1; i<=num_nodes; i++){cout <<initial_heads(i)<< endl;}
+  }
 
 resolve=true;
 	
-  if(debug ==true){ user_trace( 2, "process_external");}
+if(debug){ user_trace( 2, "process_external");}
   
 return;
 

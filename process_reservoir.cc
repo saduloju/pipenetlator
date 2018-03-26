@@ -1,10 +1,8 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process reservoir function                         *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 
@@ -13,9 +11,9 @@
 //
 // reads the reservoir nodes and heads
 //
-void process_reservoir(int &reservoir_node, Real &reservoir_head, bool &resolve, bool &debug)
+void process_reservoir(int &reservoir_node, Real &reservoir_head, bool &resolve, bool debug)
 {
-if (debug ==true){user_trace( 1, "process_reservoir");}	
+if (debug){user_trace( 1, "process_reservoir");}	
 
 int node_num; 
 Real head_value;	
@@ -50,7 +48,7 @@ reservoir_head = head_value;
 
 resolve= true;
 
-if (debug ==true){user_trace( 2, "process_reservoir");}	
+if (debug){user_trace( 2, "process_reservoir");}	
 
 return;
 }

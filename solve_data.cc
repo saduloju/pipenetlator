@@ -1,5 +1,5 @@
 //*****************************************************************************
-//*             function : process_solve function                             *
+//*             function : process_solve_data function                        *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
 //*             Last Modified: 3/25/2018                                      *
@@ -17,8 +17,8 @@ void process_solve_data(array <int> &node_table, vector<Real> &lengths,
          vector<Real> &diameters, vector<Real> &hw_coeffs,
 		 vector<Real> &external_flows,vector<Real> &initial_heads,
 		 vector <Real> &residuals,vector <Real> &frictn_ress,vector<int> &ipt,
-		 vector<int> &link, int &num_pipes,int &num_nodes,int &reservoir_node,
-		 Real &reservoir_head,Real &maxr,bool &debug)					
+		 vector<int> &link, int num_pipes,int num_nodes,int reservoir_node,
+		 Real reservoir_head,Real &maxr,bool debug)					
 {
 int i,j;
 

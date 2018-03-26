@@ -1,20 +1,16 @@
-
 //***************************************************************************
-//*                                                                         *
-//*             function : user_message                                     *
+//*             function : user_mess                                        *
 //*             Author : Sunday Aduloju                                     *
-//*             Last Modified: 2/12/2018                                    *
-//*             This function calls out messages                            *
+//*             submitted to Prof. Dodds                                    *
+//*             Last Modified: 3/25/2018                                    *
 //*                                                                         *
 //***************************************************************************
 //
 #include "header.h"
 #include "prototypes.h"
 //
-// global variables
+// The fuction calls out error messages for solve and output result command
 //
-//extern ifstream data_file;
-
 void user_mess(int mess_num)
 {
 switch( mess_num ) 
@@ -48,8 +44,8 @@ switch( mess_num )
 	 cout<< ">>>...please include solve command before output result !\n"; 
      break;
    case 7:
-     cout << "\nSolution Status:\n";
-     cout << "---------------\n";
+     cout << "\n              Solution Status:\n";
+     cout << "--------------------------------------------\n";
      break;
    case 8:
      cout << "\n";
@@ -90,10 +86,10 @@ switch( mess_num )
    case 20:
 	 cout << ">>>The iter used is the max permiss value of:";
      break;
-	 case 22:
+   case 22:
 	 cout << "...solution can not be provided\ ";
      break;	 
-	 default:
+   default:
      cout <<">>> invalid message number....\n";
      cout <<	" please crosscheck...\n";
      break;

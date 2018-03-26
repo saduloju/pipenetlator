@@ -1,10 +1,8 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_debug function                             *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/24/2018                                       *
+//*             Last Modified: 3/9/2018                                       *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"

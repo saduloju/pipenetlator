@@ -1,5 +1,4 @@
 //*****************************************************************************
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : compute_j function                                 *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
@@ -16,7 +15,7 @@ void compute_j(array <int> &node_table, array <Real> &J,vector <Real> &beta,
           vector<Real> &lengths,vector<Real> &diameters, vector<Real> &hw_coeffs,
           vector<Real> &initial_heads,vector<Real> &frictn_ress, vector<int> &ipt,
 		  vector<int> &link, int &node, int reservoir_node,int num_nodes,
-		  bool &debug)
+		  bool debug)
 {
 
 int i,j,pipe,first_link_pos,last_link_pos,sign,start, end;

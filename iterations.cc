@@ -1,10 +1,8 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_iterations function                        *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
@@ -14,10 +12,10 @@
 // and  call an error_messages when there is an error.
 //
 
-void process_iterations(int &iter, const int min_iter, const int max_iter, bool &resolve,
-                         bool &debug)
+void process_iterations(int &iter, const int min_iter, const int max_iter,
+                        bool &resolve,bool debug)
 {
-  if (debug ==true){user_trace( 1, "process_iterations");}	
+  if (debug){user_trace( 1, "process_iterations");}	
 	
   matchs( "newton", 4);
   if( matchs ( "iterations", 4))
@@ -27,9 +25,9 @@ void process_iterations(int &iter, const int min_iter, const int max_iter, bool 
       if(iter< min_iter)  error_message(53);
 	}
 
-resolve= true;
+  resolve= true;
 	
-  if (debug ==true){user_trace( 2, "process_iterations");}	
+  if (debug){user_trace( 2, "process_iterations");}	
   
 return;
 }

@@ -16,15 +16,15 @@ void process_output(array <int> &node_table, vector<Real> &lengths,
            vector<Real> &diameters,vector<Real> &hw_coeffs,
 		   vector<Real> &external_flows, vector<Real> &initial_heads, 
 		   vector<Real> &final_heads, vector<Real> &flow_rates, 
-		   vector<Real> &residuals,int &num_pipes,int &num_nodes,
-		   int &reservoir_node, Real &reservoir_head,Real &tol, int iter, 
+		   vector<Real> &residuals,int num_pipes,int num_nodes,
+		   int reservoir_node, Real reservoir_head,Real tol, int iter, 
 		   Real &maxr, string &title, bool &iter_limit,bool &data_fail,
-		   bool &resolve, bool &output_reslt, bool &debug)
+		   bool &resolve, bool &output_reslt, bool debug)
 {
 int first;	
 	
  if (debug){user_trace( 1, "process_output");}
-//                     Functions
+//                Functions call
 // process_output_data: print input data
 // process_output_results: print the results
 //
@@ -35,9 +35,8 @@ int first;
    if( matchs( "data", 4))
      {  
       process_output_data(node_table, lengths, diameters, hw_coeffs,
-					external_flows, initial_heads,
-					num_pipes, num_nodes,reservoir_node, reservoir_head, 
-					tol,iter, title,debug);					
+		          external_flows, initial_heads,num_pipes, num_nodes,
+				  reservoir_node,reservoir_head,tol,iter, title,debug);					
      }
    else if( matchs( "results", 4))
      {   
@@ -45,8 +44,8 @@ int first;
 	  else if(data_fail) { user_mess(10); return;}
 	  if(!output_reslt){ user_mess(9); return;}
 	  if(first)
-	    { process_output_results(final_heads,flow_rates, residuals, maxr, num_nodes,
-                                num_pipes, title, resolve,debug);
+	    { process_output_results(final_heads,flow_rates, residuals, maxr,
+	              num_nodes, num_pipes, title, resolve,debug);
 	    }
 	  }
    else
@@ -57,6 +56,6 @@ int first;
 	  }
   }
 
- if (debug ==true){user_trace( 2, "process_output");}
+ if (debug){user_trace( 2, "process_output");}
  return;	
 }

@@ -1,10 +1,8 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : process_propties function                          *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 
@@ -16,9 +14,9 @@
 //
 void process_propties(array <int> &node_table, vector<Real> &lengths, 
                       vector<Real> &diameters, vector<Real> &hw_coeffs,
-					  int &num_pipes, int &num_nodes, bool &resolve, bool &debug)
+					  int &num_pipes, int &num_nodes, bool &resolve, bool debug)
 {
- if (debug ==true){user_trace( 1, "process_propties");}
+ if (debug){user_trace( 1, "process_propties");}
 
  if ( matchs( "properties", 4))
    {
@@ -33,7 +31,7 @@ void process_propties(array <int> &node_table, vector<Real> &lengths,
  
 resolve = true;
  
- if (debug ==true){user_trace( 2, "process_propties");}
+ if (debug){user_trace( 2, "process_propties");}
 
  return;
 }

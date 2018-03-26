@@ -1,10 +1,8 @@
 //*****************************************************************************
-//*             CEE 691                                                       *
-//*             project: Input Translator for PipeNetwork Simulator           *
 //*             function : compute_fvec function                              *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
-//*             Last Modified: 3/9/2018                                       *
+//*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
 #include "header.h"
@@ -19,7 +17,7 @@ void compute_fvec(array <int> &node_table, vector<Real> &lengths,
 				vector<Real> &initial_heads,vector<Real> &external_flows,
 				vector<Real> &frictn_ress,vector <Real> &residuals,
 				vector <Real> &residualsneg, vector<int> &ipt,
-				vector <int> &link,int reservoir_node,int num_nodes,bool &debug)					
+				vector <int> &link,int reservoir_node,int num_nodes,bool debug)					
 {
 
 int node;
@@ -41,7 +39,8 @@ for(node=1; node<= num_nodes; node++)
 if(debug)
  {
   cout<< "residuals"<< endl;	
-  for( node=1; node<=num_nodes; node++){cout << setw(5) << residuals(node) << endl;}
+  for( node=1; node<=num_nodes; node++){cout << setw(5) << residuals(node); 
+  cout  << endl;}
  }
   
 if(debug){user_trace( 2, "compute_fvec");}

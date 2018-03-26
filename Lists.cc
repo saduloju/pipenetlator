@@ -1,11 +1,11 @@
 //*****************************************************************************
-//*             function : process_solve function                             *
+//*             --Parameters definition--                                     *
 //*             Author : Sunday Aduloju                                       *
 //*             submitted to Prof. Dodds                                      *
 //*             Last Modified: 3/25/2018                                      *
 //*                                                                           *
 //*****************************************************************************
-
+//
 // lengths = stores the lengths of pipes
 // diameters = stores the diameter of pipes
 // hw_coeffs = stores the Hazen Williams coefficient
@@ -42,14 +42,3 @@
 // max_pipes= maximum pipes permissible in a network
 // kont = counter newton iterations
 // check_link: checks if the pipes are properly connected to
-
-const int max_nodes = 2000, max_pipes = 4000, max_iter=300, min_iter=2;; 
-const Real max_tol=10.00, min_tol=0.0001; 
-int i,j, counte=0, num_pipes, num_nodes, reservoir_node, iter, new_read; 
-Real reservoir_head, tol, maxr; 
-bool debug = false, resolve = false,output_reslt = false,iter_limit = false;
-bool data_fail = false ;
-array <int> node_table;
-vector<Real> lengths, diameters, external_flows,initial_heads,final_heads;
-vector<Real> hw_coeffs, residuals, flow_rates;
-string title;

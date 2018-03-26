@@ -1,7 +1,6 @@
 
 //***************************************************************************
-//*                                                                         *
-//*             function : error_message                                    *
+//*             function : error_message function                                   *
 //*             Author : Sunday Aduloju                                     *
 //*             Last Modified: 3/22/2018                                    *
 //*             This function calls out messages                            *
@@ -20,8 +19,7 @@ void error_message(int err_num)
 	
  string title;
  int nchar_in_string;
- //title.reserve(200);
-scan_contents(title,nchar_in_string);
+ scan_contents(title,nchar_in_string);
 
 switch( err_num ) 
  { 
@@ -79,7 +77,8 @@ switch( err_num )
      cout << ">>> ERROR: node no {"<< title <<"} greater than total nodes!\n"; 
      break;
    case 18:
-     cout << ">>> ERROR: start node no {"<< title <<"} greater than no of nodes!\n"; 
+     cout << ">>> ERROR: start node no {"<< title;
+	 cout << "} greater than no of nodes!\n"; 
      break;
    case 19:
      cout<< ">>> ERROR: end node no {"<< title <<"} greater than no of nodes!\n"; 
@@ -131,10 +130,12 @@ switch( err_num )
      cout << ">>> ERROR: iteration {"<< title <<"} is not integer!\n";
      break;
    case 37:
-     cout << ">>> could not store flow {"<< title <<"} because no of nodes is negative!\n";
+     cout << ">>> could not store flow {"<< title;
+	 cout <<"} because no of nodes is negative!\n";
      break;
    case 38:
-     cout << ">>> could not store {"<< title <<"} because no of pipes is negative!\n";
+     cout << ">>> could not store {"<< title;
+	 cout <<"} because no of pipes is negative!\n";
      break;
    case 40:
      cout << ">>>ERROR: reservoir node {"<< title <<"} is negative!\n";
@@ -152,10 +153,11 @@ switch( err_num )
      cout << ">>>ERROR: Output invalid no of nodes is negative!\n";
      break;
    case 45:
-     cout<< ">>> ERROR: External flow {"<< title <<"} is negative!\n";
+     cout << ">>> ERROR: External flow {"<< title <<"} is negative!\n";
      break;
    case 46:
-     cout<< ">>> ERROR: initial nodal head {"<< title <<"} convert to double failed!\n";
+     cout << ">>> ERROR: initial nodal head {"<< title;
+	 cout <<"} convert to double failed!\n";
      break;	 
    case 48:
      cout<< ">>> ERROR: head {"<< title <<"} is negative!\n";
